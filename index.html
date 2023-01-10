@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+<body>
+  <main>
+    <section class="first-page">
+     <div class="char-info flex-row-nowrap">
+       <div class="name">
+         <div class="flex-col-rev-nowrap">
+           <label for="char-name">Character Name</label>
+           <input id="char-name" class="text-input">
+         </div>
+       </div>
+       <div class="char-details flex-row-wrap">
+         <div class="flex-col-rev-nowrap">
+           <label for="class">Class & Level</label>
+           <input id="class" class="text-input">
+         </div>
+         <div class="flex-col-rev-nowrap">
+           <label for="background">Background</label>
+           <input id="background" class="text-input">
+         </div>
+         <div class="flex-col-rev-nowrap">
+           <label for="player-name">Player Name</label>
+           <input id="player-name" class="text-input">
+         </div>
+         <div class="flex-col-rev-nowrap">
+           <label for="race">Race</label>
+           <input id="race" class="text-input">
+         </div>
+         <div class="flex-col-rev-nowrap">
+           <label for="aligment">Aligment</label>
+           <input id="aligment" class="text-input">
+         </div>
+         <div class="flex-col-rev-nowrap">
+           <label for="exp">EXP</label>
+           <input id="exp" class="text-input">
+         </div>
+       </div>
+     </div>
+     <div class="container">
+       <div class="first-column">
+         <div class="flex-row-nowrap">
+           <div class="ability-score flex-col">
+             <div class="flex-col-nowrap">
+               <label for="strength">Strength</label>
+               <p class="ability-bonus" id="str-bonus"></p>
+               <input id="strength" class="ability">
+             </div>
+             <div class="flex-col-nowrap">
+               <label for="dexterity">Dexterity</label>
+               <p class="ability-bonus" id="dex-bonus"></p>
+               <input id="dexterity" class="ability">
+             </div>
+             <div class="flex-col-nowrap">
+               <label for="constitution">Constitution</label>
+               <p class="ability-bonus" id="con-bonus"></p>
+               <input id="constitution" class="ability">
+             </div>
+             <div class="flex-col-nowrap">
+               <label for="wisdom">Wisdom</label>
+               <p class="ability-bonus" id="wis-bonus"></p>
+               <input id="wisdom" class="ability">
+             </div>
+             <div class="flex-col-nowrap">
+               <label for="inteligence">Inteligence</label>
+               <p class="ability-bonus" id="int-bonus"></p>
+               <input id="inteligence" class="ability">
+             </div>
+             <div class="flex-col-nowrap">
+               <label for="charisma">Charisma</label>
+               <p class="ability-bonus" id="cha-bonus"></p>
+               <input id="charisma" class="ability">
+             </div>
+           </div>
+           <div class="skill-container">
+             <div class="inspiration-container">
+               <input type="text" id="inspiration" class="text-input">
+               <label for="Inspiration">Inspiration</label>
+             </div>
+             <div class="proficency-container">
+               <input type="text" id="proficiency">
+               <label for="proficiency">Proficency Bonus</label>
+             </div>
+             <div class="saving-throws flex-col">
+               <div>
+                 <input type="checkbox" id="save-str" class="saves">
+                 <input class="saves-bonus"><label for="save-str"> Strength</label>
+               </div>
+               <div>
+                 <input type="checkbox" id="save-dex" class="saves">
+                 <input class="saves-bonus">
+                 <label for="save-dex">Dexterity</label>
+               </div>
+               <div>
+                 <input type="checkbox" id="save-con" class="saves">
+                 <input class="saves-bonus">
+                 <label for="save-str">Constitution</label>
+               </div>
+               <div>
+                 <input type="checkbox" id="save-wis" class="saves">
+                 <input class="saves-bonus">
+                 <label for="save-wis">Wisdom</label>
+               </div>
+               <div>
+                 <input type="checkbox" id="save-int" class="saves">
+                 <input class="saves-bonus">
+                 <label for="save-int">Inteligence</label>
+               </div>
+               <div>
+                 <input type="checkbox" id="save-cha" class="saves">
+                 <input class="saves-bonus">
+                 <label for="save-cha">Charisma</label>
+               </div>
+               <p class="description">Saving Throws</p>
+             </div>
+             <div class="skills">
+               <div>
+                 <input type="checkbox" id="acrobatics" class="skill"><input class="skill-bonus">
+                 <label for="acrobatics"> Acrobatics<span class="grey"> (Dex)</span></label>
+               </div>
+               <div>
+                 <input type="checkbox" id="handling" class="skill"><input class="skill-bonus">
+                 <label for="handling"> Animal Handling<span class="grey"> (Wis)</span></label>
+               </div>
+               <div>
+                 <input type="checkbox" id="arcana" class="skill"><input class="skill-bonus">
+                 <label for="arcana"> Arcana<span class="grey"> (Int)</span></label>
+               </div>
+               <div>
+                 <input type="checkbox" id="athletics" class="skill"><input class="skill-bonus">
+                 <label for="athletics"> Athletics<span class="grey"> (Str)</span></label>
+               </div>
+               <div>
+                 <input type="checkbox" id="deception" class="skill"><input class="skill-bonus">
+                 <label for="deception"> Deception<span class="grey"> (Cha)</span></label>
+               </div>
+               <div>
+                 <input type="checkbox" id="history" class="skill"><input class="skill-bonus">
+                 <label for="history"> History<span class="grey"> (Int)</span></label>
+               </div>
+               <div>
+                 <input type="checkbox" id="insight" class="skill"><input class="skill-bonus">
+                 <label for="insight"> Insight<span class="grey"> (Wis)</span></label>
+               </div>
+               <div>
+                 <input type="checkbox" id="intimidation" class="skill"><input class="skill-bonus">
+                 <label for="intimidation"> Intimidation<span class="grey"> (Cha)</span></label>
+               </div>
+               <div>
+                 <input type="checkbox" id="invegistation" class="skill"><input class="skill-bonus">
+                 <label for="invegistation"> Invegistation<span class="grey"> (Int)</span></label>
+               </div>
+               <div>
+                 <input type="checkbox" id="medicine" class="skill"><input class="skill-bonus">
+                 <label for="medicine"> Medicine<span class="grey"> (Wis)</span></label>
+               </div>
+               <div>
+                 <input type="checkbox" id="nature" class="skill"><input class="skill-bonus">
+                 <label for="nature"> Nature<span class="grey"> (Int)</span></label>
+               </div>
+               <div>
+                 <input type="checkbox" id="perception" class="skill"><input class="skill-bonus">
+                 <label for="perception"> Perception<span class="grey"> (Wis)</span></label>
+               </div>
+               <div>
+                 <input type="checkbox" id="performance" class="skill"><input class="skill-bonus">
+                 <label for="performance"> Performance<span class="grey"> (Cha)</span></label>
+               </div>
+               <div>
+                 <input type="checkbox" id="presuasion" class="skill"><input class="skill-bonus">
+                 <label for="presuasion"> Presuasion<span class="grey"> (Cha)</span></label>
+               </div>
+               <div>
+                 <input type="checkbox" id="religion" class="skill"><input class="skill-bonus">
+                 <label for="religion"> Religion<span class="grey"> (Int)</span></label>
+               </div>
+               <div>
+                 <input type="checkbox" id="shleight" class="skill"><input class="skill-bonus">
+                 <label for="shleight"> Shleight of hand<span class="grey"> (Dex)</span></label>
+               </div>
+               <div>
+                 <input type="checkbox" id="stealth" class="skill"><input class="skill-bonus">
+                 <label for="stealth"> Stealth<span class="grey"> (Dex)</span></label>
+               </div>
+               <div>
+                 <input type="checkbox" id="survival" class="skill"><input class="skill-bonus">
+                 <label for="survival"> Survival<span class="grey"> (Wis)</span></label>
+               </div>
+               <p class="description">Skills</p>
+             </div>
+           </div>
+         </div>
+         <div class="wis-passive flex-row-nowrap">
+           <input type="text" id="passive-wis"><label for="passive-wis">PASSIVE WISDOM (PERCEPTION)</label>
+         </div>
+         <div class="other-proficiencies flex-col border-square">
+           <textarea id="other-proficiencies" class="text-input"></textarea>
+           <p>OTHER PROFICIENCIES & LANGUAGES</p>
+         </div>
+       </div>
+       <div class="second-column flex-row-wrap">
+         <div class="flex-col-rev-nowrap border-triangle">
+           <label for="armor-class">Armor <br>Class</label>
+           <input id="armor-class" type="text" class="text-input">
+         </div>
+         <div class="flex-col-rev-nowrap one-third border-square">
+           <label for="initiative">Initiative</label>
+           <input type="text" id="initiative" class="text-input">
+         </div>
+         <div class="flex-col-rev-nowrap one-third border-square">
+           <label for="speed">Speed</label>
+           <input type="text" id="speed" class="text-input">
+         </div>
+         <div id="hp-max">
+           <label class="grey" for="max-hp">Hit Point Maximum</label>
+           <input type="text" id="max-hp" class="text-input">
+           <div class="flex-col-rev-nowrap hp-current">
+             <label for="current-hp">Current Hit Points</label>
+             <input type="text" id="current-hp" class="text-input">
+           </div>
+         </div>
+         <div class="flex-col-rev-nowrap" id="hp-temp" >
+           <label for="temp-hp">Temporary Hit Points</label><input type="text" id="temp-hp" class="text-input">
+         </div>
+         <div class="border-square hit-dice">
+           <div class="hp-dice-total">
+             <label for="total-dice" class="grey">Total</label>
+             <input type="text" id="total-dice" class="text-input">
+           </div>
+           <div class="flex-col-rev-nowrap hp-dice">
+             <label for="dice-hp">Hit Dice</label>
+             <input type="text" id="dice-hp" class="text-input">
+           </div>
+         </div>
+         <div class="death-saves border-square">
+           <div class="sucesses-container flex-row-wrap">
+             <p>SUCESSES</p>
+             <input type="checkbox" class="death-throw">
+             <input type="checkbox" class="death-throw">
+             <input type="checkbox" class="death-throw">
+           </div>
+           <div class="failures-container flex-row-wrap">
+             <p>FAILURES</p>
+             <input type="checkbox" class="death-throw">
+             <input type="checkbox" class="death-throw">
+             <input type="checkbox" class="death-throw">
+           </div>
+           <p>DEATH SAVES</p>
+         </div>
+         <div class="weapons-spells flex-col border-square">
+           <div class="weapon-desc flex-row-nowrap">
+             <div class="grey">NAME</div>
+             <div class="grey">ATTACK BONUS</div>
+             <div class="grey">DAMAGE</div>
+           </div>
+           <div id="weapon-1" class="weapon flex-row-nowrap">
+             <input type="text">
+             <input type="text">
+             <input type="text">
+           </div>
+           <div id="weapon-2" class="weapon flex-row-nowrap">
+             <input type="text">
+             <input type="text">
+             <input type="text">
+           </div>
+           <div id="weapon-3" class="weapon flex-row-nowrap">
+             <input type="text">
+             <input type="text">
+             <input type="text">
+           </div>
+           <textarea id="other-weapons" class="text-input"></textarea>
+           <p>ATTACKS & SPELLCASTING</p>
+         </div>
+         <div class="equipment-money flex-row-wrap border-square">
+           <div class="money flex-col">
+             <div>
+               <label for="cp">CP</label>
+               <input type="text" id="cp" class="text-input">
+             </div>
+             <div>
+               <label for="sp">SP</label>
+               <input type="text" id="sp" class="text-input">
+             </div>
+             <div>
+               <label for="ep">EP</label>
+               <input type="text" id="ep" class="text-input">
+             </div>
+             <div>
+               <label for="gp">GP</label>
+               <input type="text" id="gp" class="text-input">
+             </div>
+             <div>
+               <label for="pp">PP</label>
+               <input type="text" id="pp" class="text-input">
+             </div>
+           </div>
+           <textarea id="equipment" class="text-input"></textarea>
+           <p>EQUIPMENT</p>
+         </div>
+       </div>
+       <div class="third-column flex-col">
+         <div class="character flex-col">
+           <div class="flex-col border-square">
+             <textarea id="traits" class="text-input"></textarea>
+             <p>PERSONALITY TRAITS</p>
+           </div>
+           <div class="flex-col border-square">
+             <textarea id="ideals" class="text-input"></textarea>
+             <p>IDEALS</p>
+           </div>
+           <div class="flex-col border-square">
+             <textarea id="bonds" class="text-input"></textarea>
+             <p>BONDS</p>
+           </div>
+           <div class="flex-col border-square">
+             <textarea id="flaws" class="text-input"></textarea>
+             <p>FLAWS</p>
+           </div>
+         </div>
+         <div class="features flex-col border-square">
+           <textarea id="features" class="text-input"></textarea>
+           <p>FEATURES & TRAITS</p>
+         </div>
+       </div>
+     </div>
+    </section>
+    <section class="second-page">
+      <div class="second-page-info flex-row-nowrap">
+        <div class="second-page-name flex-col-rev-nowrap">
+          <label for="name">Character name</label>
+          <input id="name" class="text-input">
+        </div>
+        <div class="apperance flex-row-wrap">
+          <div class="flex-col-rev-nowrap">
+           <label for="age">Age</label>
+           <input id="age" class="text-input">
+         </div>
+          <div class="flex-col-rev-nowrap">
+           <label for="height">Height</label>
+           <input id="height" class="text-input">
+         </div>
+          <div class="flex-col-rev-nowrap">
+           <label for="weight">Weight</label>
+           <input id="weight" class="text-input">
+         </div>
+          <div class="flex-col-rev-nowrap">
+           <label for="eyes">Eyes</label>
+           <input id="eyes" class="text-input">
+         </div>
+          <div class="flex-col-rev-nowrap">
+           <label for="skin">Skin</label>
+           <input id="skin" class="text-input">
+         </div>
+          <div class="flex-col-rev-nowrap">
+           <label for="hair">Hair</label>
+           <input id="hair" class="text-input">
+         </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="fourth-column">
+          <div class="char-apperance flex-col border-square">
+            <textarea id="apperance-char" class="text-input"></textarea>
+            <p>Character Apperance</p>
+          </div>
+          <div class="char-backstory flex-col border-square">
+            <textarea id="backstory-char" class="text-input"></textarea>
+            <p>Character-backstory</p>
+          </div>
+        </div>
+        <div class="fifth-column">
+          <div class="allies flex-row-wrap border-square">
+            <textarea id="allies-input" class="input-border"></textarea>
+            <div class="organization">
+              <label for="org-name" class="grey">NAME</label>
+              <input type="text" id="org-name" class="input-border text-input">
+              <textarea id="org-desc" class="input-border text-input"></textarea>
+            </div>
+            <p>Allies & Organizations</p>
+          </div>
+          <div class="additional-features border-square">
+            <textarea id="add-features" class="input-border text-input"></textarea>
+            <p>Additional Features & Traits</p>
+          </div>
+          <div class="treasure border-square">
+            <textarea id="treasure" class="input-border text-input"></textarea>
+            <p>Treasure</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="third-page">
+      <div class="spellcasting flex-row-nowrap">
+        <div class="flex-col-rev-nowrap spell-class border-square">
+          <label for="spellcasting-class">Spellcasting Class</label>
+          <input type="text" id="class-spellcasting" class="input-border text-input">
+        </div>
+        <div class="spellcasting-details flex-row-nowrap border-square">
+          <div class="flex-col-rev-nowrap">
+            <label for="spellcasting-ability">Spellcasting Ability</label>
+            <input type="text" id="spellcasting-ability" class="input-border text-input">
+          </div>
+          <div class="flex-col-rev-nowrap">
+            <label for="spell-save">Spell Save DC</label>
+            <input type="text" id="spell-save" class="input-border text-input">
+          </div>
+          <div class="flex-col-rev-nowrap">
+            <label for="spell-attack-bonus">Spell Attack Bonus</label>
+            <input type="text" id="spell-attack-bonus" class="input-border text-input">
+          </div>
+        </div>
+      </div>
+      <div class="container flex-row-nowrap">
+        <div class="sixth-column flex-col-nowrap">
+          <div class="cantrips border-grey">
+            <div class="flex-row-nowrap">
+              <div>
+                <p>0</p>
+              </div>
+              <div>
+                <p>Cantrips</p>
+              </div>
+            </div>
+          </div>
+          <div class="circle-1 flex-col-nowrap border-grey">
+            <div class="flex-row-nowrap circle-detail">
+              <div>
+                <p class="grey">Spell level</p>
+                <p>1</p>
+              </div>
+              <div class="total-slots flex-col">
+                <p class="grey">Slots Total</p>
+                <input class="slots-total" type="text">
+              </div>
+              <div class="expended-slots flex-col">
+                <p class="grey">Slots Expended</p>
+                <input class="slots-expended" type="text">
+              </div>
+            </div>
+          </div>
+          <div class="circle-2 flex-col-nowrap border-grey">
+            <div class="flex-row-nowrap circle-detail">
+              <div>
+                <p>2</p>
+              </div>
+              <div class="total-slots">
+                <input class="slots-total" type="text">
+              </div>
+              <div class="expended-slots">
+                <input class="slots-expended" type="text">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="seventh-column flex-col-nowrap">
+          <div class="circle-3 flex-col-nowrap border-grey">
+            <div class="flex-row-nowrap circle-detail">
+              <div>
+                <p>3</p>
+              </div>
+              <div class="total-slots">
+                <input class="slots-total" type="text">
+              </div>
+              <div class="expended-slots">
+                <input class="slots-expended" type="text">
+              </div>
+            </div>
+          </div>
+          <div class="circle-4 flex-col-nowrap border-grey">
+            <div class="flex-row-nowrap circle-detail">
+              <div>
+                <p>4</p>
+              </div>
+              <div class="total-slots">
+                <input class="slots-total" type="text">
+              </div>
+              <div class="expended-slots">
+                <input class="slots-expended" type="text">
+              </div>
+            </div>
+          </div>
+          <div class="circle-5 flex-col-nowrap border-grey">
+            <div class="flex-row-nowrap circle-detail">
+              <div>
+                <p>5</p>
+              </div>
+              <div class="total-slots">
+                <input class="slots-total" type="text">
+              </div>
+              <div class="expended-slots">
+                <input class="slots-expended" type="text">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="eigth-column flex-col-nowrap">
+          <div class="circle-6 flex-col-nowrap border-grey">
+            <div class="flex-row-nowrap circle-detail">
+              <div>
+                <p>6</p>
+              </div>
+              <div class="total-slots">
+                <input class="slots-total" type="text">
+              </div>
+              <div class="expended-slots">
+                <input class="slots-expended" type="text">
+              </div>
+            </div>
+          </div>
+          <div class="circle-7 flex-col-nowrap border-grey">
+            <div class="flex-row-nowrap circle-detail">
+              <div>
+                <p>7</p>
+              </div>
+              <div class="total-slots">
+                <input class="slots-total" type="text">
+              </div>
+              <div class="expended-slots">
+                <input class="slots-expended" type="text">
+              </div>
+            </div>
+          </div>
+          <div class="circle-8 flex-col-nowrap border-grey">
+            <div class="flex-row-nowrap circle-detail">
+              <div>
+                <p>8</p>
+              </div>
+              <div class="total-slots">
+                <input class="slots-total" type="text">
+              </div>
+              <div class="expended-slots">
+                <input class="slots-expended" type="text">
+              </div>
+            </div>
+          </div>
+          <div class="circle-9 flex-col-nowrap border-grey">
+            <div class="flex-row-nowrap circle-detail">
+              <div>
+                <p>9</p>
+              </div>
+              <div class="total-slots">
+                <input class="slots-total" type="text">
+              </div>
+              <div class="expended-slots">
+                <input class="slots-expended" type="text">
+              </div>
+            </div></div>
+        </div>
+      </div>
+    </section>
+   </main>
+  <script src="script.js"></script>
+</body>
+</html>

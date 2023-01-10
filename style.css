@@ -1,0 +1,710 @@
+body{
+  font-size: 14px; 
+  font-weight: 600;
+}
+.input-border{
+  border: 2px solid grey;
+  border-radius: 0.5em;
+}
+.flex-row-nowrap{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.flex-row-wrap{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.flex-col-rev-nowrap{
+  display: flex;
+  align-items: center;
+  flex-direction: column-reverse;
+  flex-wrap: nowrap;
+}
+.flex-col{
+  display: flex;
+  flex-direction: column;
+}
+.flex-col-nowrap{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+main{
+  max-width: 910px;
+  /* height: auto; */
+  margin-left: auto;
+  margin-right: auto;
+}
+section{
+  margin-bottom: 2rem;
+  height: 100%;
+
+}
+.first-page{ 
+  height: 1150px;
+  border: grey outset 4px;
+}
+input{
+  width: 50px;
+  height: 1em;
+  font-weight: 600;
+  text-align: center;
+}
+.name{
+  width: 33%;
+  border: 4px double black;
+  border-radius: 0.75em;
+  margin: 4px;
+}
+#char-name{
+  width: 90%;
+  height: 2.5em;
+  margin-bottom: 4px;
+  border: 2px double grey;
+  border-radius: 4px;
+}
+.name > div{
+  justify-content: center;
+  height: 100%;
+}
+.char-details{
+  justify-content: space-around;
+  width: 63%;
+  margin: 4px 4px 4px 12px;
+  border: 4px double black;
+  border-radius: 0.75em
+}
+.char-details > div{
+  width: 30%;
+}
+.char-details > div > input{
+  width: 100%;
+  margin-top: 5px;
+  border: 2px double grey;
+  border-radius: 4px;
+  height: 1.25em;
+}
+.container{
+  display: flex;
+  justify-content: space-between;
+  height: 93%;
+  width: 100%;
+}
+.first-column{
+  width: 34%;
+  height: 77%;
+  margin-left: 4px;
+/*   min-width: 300px; */
+}
+.ability-score{
+
+  justify-content: space-between;
+  width: 40%;
+}
+.ability-score > div{
+  border: 4px double black;
+  border-radius: 10% 10% 60% 60%;
+  width: 75%;
+  margin-bottom: 4px;
+  min-width: 80px;
+  max-width: 90px;
+}
+.ability-bonus{
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: -2px;
+  margin-top: 4px;
+  width: 30px;
+  height: 30px;
+  border: 2px groove black;
+  border-radius: 50% 50% 50% 50% / 35% 35% 75% 75%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ability{
+  margin: 5px 0 0 0;
+  width: 20px;
+  height: 20px;
+  border: 2px groove black;
+  border-radius: 75% 75% 75% 75% / 100% 100% 100% 100%;
+  text-align: center;
+  margin-bottom: 2px;
+}
+.other-proficiencies{
+  height: 32.5%;
+  align-items: center;
+}
+#other-proficiencies{
+  width: 93%;
+  margin-top: 6px;
+  height: 82%;
+  border: 2px double black;
+  border-radius: 0.25em;
+}
+#inspiration,
+#proficiency{
+  width: 8%;
+  margin: 0.5em 0 0.5em 0; 
+}
+#proficiency,
+#inspiration{
+  border: solid black 2px;
+}
+.proficency-container,
+.inspiration-container{
+  margin: 4px 0 4px 0;
+  width: 97%;
+  border: 2px groove black;
+  border-radius: 0 1em 1em 0;
+}
+.saving-throws{
+  margin: 4px 0 4px 0;
+  width: 96%;
+  border: 1px solid black;
+  border-radius: 1em;
+  padding: 2px;
+}
+.saving-throws > div{
+  margin: 0.25em 0 0.25em 0; 
+}
+.saves-bonus{
+  width: 1.25em;
+}
+.skills{
+  padding: 2px;
+  margin: 4px 0 4px 0;
+  width: 96%;
+  border: 1px solid black;
+  border-radius: 1em;
+  font-size: 14px;
+}
+.skills > div{
+  margin: 0.25em 0 0.25em 0;
+}
+.skill-bonus{
+  font-size: 14px;
+  width: 1.25em;
+}
+.description{
+  text-align: center;
+  margin: 4px 0 0 0;
+}
+.wis-passive{
+  align-items: center;
+  margin: auto;
+  width: 97%;
+  padding: 2px 0 2px 0;
+  margin-bottom: 0.5em;
+  border: 4px ridge black;
+  border-radius: 0 15% 15% 0;
+}
+#passive-wis{
+  margin: 0 4px;
+  border: 2px double grey;
+  border-radius: 0.25em;
+}
+input[type="checkbox"]{
+  margin: 0 2px 0 2px;
+  width: 14px;
+}
+input[type="checkbox"]:hover{
+  cursor: pointer;
+}
+.grey{
+  color: lightgrey;
+}
+.one-third{
+  width: 25%;
+  height: 7%;
+  justify-content: space-around;
+}
+.border-square{
+  margin: 0.25em 0 0.25em 0;
+  border: 4px double black;
+  padding: 0.125em;
+  border-radius: 0.75em / 1.5em;
+}
+.border-triangle{
+  text-align: center;
+  width: 30%;
+  margin: 0.25em 0 0.25em 0;
+  border: 4px double black;
+  border-radius: 50% 50% 50% 50% / 35% 35% 100% 100%;
+}
+.second-column{
+  height: 96%;
+  width: 34%;
+/*   min-width: 300px; */
+  margin: 0;
+  padding: 0;
+  align-content: flex-start;
+  justify-content: space-around;
+}
+.second-column > div > input{
+  width: 60%;
+  height: 2em;
+}
+#initiative,
+#armor-class,
+#speed{
+  border: 2px dashed grey;
+}
+#hp-max{
+ padding-top: 4px;
+ padding-left: 4px;
+ width: 95%;
+ height: 8%;
+ border: 4px double black;
+ border-radius: 0.5em 0.5em 1em 1em / 0.5em 0.5em 2em 2em;
+ margin-bottom: 4px;
+ margin-top: 2px;
+}
+#max-hp{
+  width: 53%;
+  height: 1.25em;
+  border: 2px dashed grey;
+  margin-left: 4px;
+  text-align: center;
+}
+.hp-current{
+  padding-top: 0.5em;
+}
+#current-hp{
+  border: 2px dashed grey;
+  width: 90%;
+  height: 1.25em;
+  text-align: center;
+}
+#hp-temp{
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+  width: 95%;
+  height: 8%;
+  border: 4px double black;
+  border-radius: 1em 1em 0.5em 0.5em / 2em 2em 0.5em 0.5em
+}
+#temp-hp{
+  border: 2px dashed grey;
+  text-align: center;
+  width: 90%;
+  height: 3em;
+}
+.hp-dice-total{
+  margin-left: 2px;
+}
+.hit-dice{
+  width: 45%;
+}
+#dice-hp{
+  text-align: center;
+  width: 83%;
+  height: 4em;
+  border: 2px dashed grey;
+  margin-bottom: 4px;
+}
+#total-dice{
+  border: 2px dashed grey;
+  width: 64%;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  text-align: center;
+}
+.death-throw{
+  position: relative;
+  margin: auto -1.25em auto -1.25em;
+  height: 1em;
+}
+.death-saves{
+  font-size: 12px;
+  width: 45%;
+  text-align: center;
+}
+.death-saves> div> p{
+  margin-right: 4px; 
+}
+.failures-container,
+.sucesses-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.weapons-spells{
+  padding-bottom: 0.5em;
+  align-items: center;
+  height: 26.5%;
+}
+.weapon{
+  justify-content: space-around;
+}
+.weapon > input{
+  width: 28%;
+  border: none;
+  background-color: lightgrey;
+  margin-top: 2px;
+}
+.weapon-desc{
+  margin-top: 4px;
+  width: 100%;
+  justify-content: space-around;
+}
+.weapon-desc > div{
+  display: inline-block;
+  flex-direction: row;
+  width: 30%;
+  font-size: 10px;
+}
+#weapon-3{
+  margin-bottom: 4px;
+}
+#other-weapons{
+  border: 2px solid grey;
+  border-radius: 1em;
+  margin-top: 0.5em;
+  width: 94%;
+  height: 80%;
+}
+#equipment{
+  width: 71%;
+  margin: 4px 4px -2px 0;
+  border: 2px solid grey;
+  border-radius: 0.5em;
+  height: 82.5%;
+}
+.equipment-money{
+  height: 30%;
+  width: 100%;
+  justify-content: center;
+}
+.money{
+  padding: 4px;  
+  align-items: center;
+}
+.money > div{
+  margin-bottom: 1em;
+}
+.money > div > label{
+  padding: 2px;
+}
+.money > div > input{
+  width: 2em;
+  margin-right: 4px;
+  border: 2px ridge grey;
+  border-radius: 4px;
+}
+.third-column{
+  width: 28%;
+  height: 97.6%;
+  margin-right: 4px;
+}
+.character{
+  padding-top: 4px;
+  height: 60%;
+  justify-content: space-between;
+}
+.character > div{
+  align-items: center;
+  height: 23%;
+  border: 4px double black;
+  border-radius: 1em;
+}
+.character > div > textarea{
+  margin-top: 8px;
+  width: 90%;
+  height: 80%;
+  font-size: 14px;
+}
+#traits,
+#ideals,
+#bonds,
+#flaws{
+  border: 2px solid grey;
+  border-radius: 0.5em;
+}
+textarea{
+  resize: none;
+  font-weight: 600;
+  font-size: 14px;
+}
+.features{
+  height: 40%;
+  align-items: center;
+  margin-bottom: 2px;
+}
+#features{
+  width: 90%;
+  height: 90%;
+  margin-top: 8px;
+  border: 2px solid grey;
+  border-radius: 0.5em;
+}
+.second-page{
+  height: 1150px;
+  border: 4px outset grey;
+}
+.second-page-info{
+  height: 10%;
+}
+.second-page-name{
+  width: 30%;
+  justify-content: center;
+  border: 4px double black;
+  margin: 4px;
+  border-radius: 0.5em;
+}
+#name{
+  width: 90%;
+  height: 2.5em;
+  margin-bottom: 4px;
+  border: 2px double grey;
+  border-radius: 4px;
+}
+.apperance{
+  justify-content: space-around;
+  width: 75%;
+  border: 4px double black;
+  margin: 4px;
+  border-radius: 0.5em;
+}
+.apperance > div{
+  width: 30%;
+}
+.apperance > div > input{
+  width: 90%;
+  border: 2px double grey;
+  border-radius: 4px;
+  height: 1.25em;
+}
+.fourth-column{
+  width: 28.5%;
+  height: 93%;
+  margin-left: 4px;
+}
+.char-apperance,
+.char-backstory{
+  align-items: center;
+}
+.char-apperance{
+  height: 40%;
+}
+.char-backstory{
+  height: 60%;
+}
+#apperance-char,
+#backstory-char{
+  margin-top: 1em;
+  height: 90%;
+  width: 90%;
+  border: double 2px grey;
+}
+.fifth-column{
+  height: 93%;
+  width: 68%;
+  margin-right: 16px;
+}
+.allies{
+  width: 100%;
+  height: 35%;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 0.5em;
+}
+#allies-input{
+  width: 50%;
+  height: 85%;
+}
+.organization{
+  width: 35%;
+  height: 70%;
+  border: double 4px black;
+  border-radius: 0.5em;
+  padding: 4px;
+}
+#org-name{
+  width: 95%;
+}
+#org-desc{
+  width: 95%;
+  height: 78%;
+  margin-top: 0.5em;
+}
+.additional-features{
+  text-align:center;
+  width: 100%;
+  height: 35%;
+}
+#add-features{
+  height: 80%;
+  width: 95%;
+  margin-top: 0.5em;
+}
+.treasure{
+  text-align:center;
+  width: 100%;
+  height: 28%;
+}
+#treasure{
+  height: 75%;
+  width: 95%;
+  margin-top: 0.5em;
+}
+.third-page{
+  height: auto;
+  border: 4px outset grey;
+}
+.spellcasting{
+  height: 5em;
+  width: 100%;
+}
+.spell-class{
+  width: 30%;
+  justify-content: center;
+  margin: 4px 2px 4px 4px;
+}
+#class-spellcasting{
+  width: 80%;
+  height: 1.5em;
+}
+.spellcasting-details{
+  justify-content: space-around;
+  width: 70%;
+  margin: 4px 4px 4px 2px;
+}
+.spellcasting-details > div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5em;
+}
+.spellcasting-details > div > input{
+  width: 80%;
+  height: 1.5em;
+}
+.sixth-column{
+  width: 32%;
+  height: 100%;
+  margin: 4px;
+  justify-content: flex-start;
+}
+.seventh-column{
+  width: 32%;
+  height: 100%;
+  margin: 4px;
+  justify-content: flex-start;
+}
+.eigth-column{
+  width: 32%;
+  height: 100%;
+  margin: 4px;
+  justify-content: flex-start;
+}
+.full-width{
+  width: 90%;
+  margin: 0.1em 0 0.1em 0;
+}
+.circle-detail{
+  width: 95%;
+  justify-content: space-between;
+  font-size: 12px;
+  
+}
+.slots-total{
+  width: 65%;
+  border: 2px solid grey;
+  border-radius: 0.5em;
+}
+.slots-expended{
+  width: 80%;
+  border: 2px solid grey;
+  border-radius: 0.5em;
+}
+.total-slots{
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.expended-slots{
+  width: 55%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cantrips{
+  width: 100%;
+}
+.cantrip{
+  width: 95%;
+  margin: 0.1em 0 0.1em 0;
+}
+.border-grey{
+  border: 1px solid grey;
+  border-radius: 1em;
+}
+.circle-1{
+  border-bottom: unset;
+}
+.circle-2{
+  border-top: unset;
+}
+.circle-3{
+  border-bottom: unset;
+}
+.circle-4{
+  border-top: unset;
+  border-bottom: unset;
+}
+.circle-5{
+  border-top: unset;
+}
+.circle-6{
+  border-bottom: unset;
+}
+.circle-7{
+  border-top: unset;
+  border-bottom: unset;
+}
+.circle-8{
+  border-top: unset;
+  border-bottom: unset;
+}
+.circle-9{
+  border-top: unset;
+}
+/*
+@media (max-width: 900px){
+  .first-page{
+    height: unset;
+  }
+  .first-column{
+    width: 49%;
+    justify-content: space-around;
+  }
+  .second-column{
+    width: 49%;
+  }
+  .third-column{
+    width: 100%;
+    margin-left: 4px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: space-between;
+  }
+  .third-column > div{
+    width: 48%;
+    height: 600px;
+  }
+  #equipment{
+    height: 200px;
+  }
+  #other-proficiencies{
+    height: 160px;
+  }
+  .ability-score{
+    align-items: center;
+  }
+} */
