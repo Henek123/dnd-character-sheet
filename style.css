@@ -155,7 +155,7 @@ input{
 #inspiration{
   border: solid black 2px;
 }
-.proficency-container,
+.proficiency-container,
 .inspiration-container{
   margin: 4px 0 4px 0;
   width: 97%;
@@ -328,7 +328,7 @@ input[type="checkbox"]:hover{
   margin-right: 4px; 
 }
 .failures-container,
-.sucesses-container{
+.successes-container{
   display: flex;
   justify-content: center;
   align-items: center;

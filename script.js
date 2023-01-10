@@ -1,7 +1,7 @@
 //loading saved data on load and calculating skills bonus
 window.addEventListener("DOMContentLoaded", () =>{
-  //load proficency bonus
-  inputLoad(proficencyBonus);
+  //load proficiency bonus
+  inputLoad(proficiencyBonus);
   for(let i = 0; i < 18; i++){
     inputLoad(skills[i]);
   };
@@ -17,41 +17,41 @@ window.addEventListener("DOMContentLoaded", () =>{
   };
   
   loadAbilityScore(str, strBonus);
-  skillBonus(strBonus, skills[3], skillsBonus[3], proficencyBonus);
-  skillBonus(strBonus, saveThrows[0], saveThrowsBonus[0], proficencyBonus);
+  skillBonus(strBonus, skills[3], skillsBonus[3], proficiencyBonus);
+  skillBonus(strBonus, saveThrows[0], saveThrowsBonus[0], proficiencyBonus);
   
   loadAbilityScore(dex, dexBonus);
-  skillBonus(dexBonus, saveThrows[1], saveThrowsBonus[1], proficencyBonus);
-  skillBonus(dexBonus, skills[0], skillsBonus[0], proficencyBonus);
-  skillBonus(dexBonus, skills[15], skillsBonus[15], proficencyBonus);
-  skillBonus(dexBonus, skills[16], skillsBonus[16], proficencyBonus);
-  skillBonus(dexBonus, saveThrows[1], saveThrowsBonus[1], proficencyBonus);
+  skillBonus(dexBonus, saveThrows[1], saveThrowsBonus[1], proficiencyBonus);
+  skillBonus(dexBonus, skills[0], skillsBonus[0], proficiencyBonus);
+  skillBonus(dexBonus, skills[15], skillsBonus[15], proficiencyBonus);
+  skillBonus(dexBonus, skills[16], skillsBonus[16], proficiencyBonus);
+  skillBonus(dexBonus, saveThrows[1], saveThrowsBonus[1], proficiencyBonus);
   
   loadAbilityScore(con, conBonus);
-  skillBonus(conBonus, saveThrows[2], saveThrowsBonus[2], proficencyBonus);
+  skillBonus(conBonus, saveThrows[2], saveThrowsBonus[2], proficiencyBonus);
   
   loadAbilityScore(wis, wisBonus);
-  skillBonus(wisBonus, skills[1], skillsBonus[1], proficencyBonus);
-  skillBonus(wisBonus, skills[6], skillsBonus[6], proficencyBonus);
-  skillBonus(wisBonus, skills[9], skillsBonus[9], proficencyBonus);
-  skillBonus(wisBonus, skills[11], skillsBonus[11], proficencyBonus);
-  skillBonus(wisBonus, skills[17], skillsBonus[17], proficencyBonus);
-  skillBonus(wisBonus, saveThrows[3], saveThrowsBonus[3], proficencyBonus);
+  skillBonus(wisBonus, skills[1], skillsBonus[1], proficiencyBonus);
+  skillBonus(wisBonus, skills[6], skillsBonus[6], proficiencyBonus);
+  skillBonus(wisBonus, skills[9], skillsBonus[9], proficiencyBonus);
+  skillBonus(wisBonus, skills[11], skillsBonus[11], proficiencyBonus);
+  skillBonus(wisBonus, skills[17], skillsBonus[17], proficiencyBonus);
+  skillBonus(wisBonus, saveThrows[3], saveThrowsBonus[3], proficiencyBonus);
   
   loadAbilityScore(int, intBonus);
-  skillBonus(intBonus, skills[2], skillsBonus[2], proficencyBonus);
-  skillBonus(intBonus, skills[5], skillsBonus[5], proficencyBonus);
-  skillBonus(intBonus, skills[8], skillsBonus[8], proficencyBonus);
-  skillBonus(intBonus, skills[10], skillsBonus[10], proficencyBonus);
-  skillBonus(intBonus, skills[14], skillsBonus[14], proficencyBonus);
-  skillBonus(intBonus, saveThrows[4], saveThrowsBonus[4], proficencyBonus);
+  skillBonus(intBonus, skills[2], skillsBonus[2], proficiencyBonus);
+  skillBonus(intBonus, skills[5], skillsBonus[5], proficiencyBonus);
+  skillBonus(intBonus, skills[8], skillsBonus[8], proficiencyBonus);
+  skillBonus(intBonus, skills[10], skillsBonus[10], proficiencyBonus);
+  skillBonus(intBonus, skills[14], skillsBonus[14], proficiencyBonus);
+  skillBonus(intBonus, saveThrows[4], saveThrowsBonus[4], proficiencyBonus);
   
   loadAbilityScore(cha, chaBonus);
-  skillBonus(chaBonus, skills[4], skillsBonus[4], proficencyBonus);
-  skillBonus(chaBonus, skills[7], skillsBonus[7], proficencyBonus);
-  skillBonus(chaBonus, skills[12], skillsBonus[12], proficencyBonus);
-  skillBonus(chaBonus, skills[13], skillsBonus[13], proficencyBonus);
-  skillBonus(chaBonus, saveThrows[5], saveThrowsBonus[5], proficencyBonus);
+  skillBonus(chaBonus, skills[4], skillsBonus[4], proficiencyBonus);
+  skillBonus(chaBonus, skills[7], skillsBonus[7], proficiencyBonus);
+  skillBonus(chaBonus, skills[12], skillsBonus[12], proficiencyBonus);
+  skillBonus(chaBonus, skills[13], skillsBonus[13], proficiencyBonus);
+  skillBonus(chaBonus, saveThrows[5], saveThrowsBonus[5], proficiencyBonus);
 });
 
 //reading saved stats
@@ -68,8 +68,8 @@ let str = document.getElementById("strength");
 let strBonus = document.getElementById("str-bonus");
 str.addEventListener("change", () => {
   abilityBonusValue(str, strBonus);
-  skillBonus(strBonus, skills[3], skillsBonus[3], proficencyBonus);
-  skillBonus(strBonus, saveThrows[0], saveThrowsBonus[0], proficencyBonus);
+  skillBonus(strBonus, skills[3], skillsBonus[3], proficiencyBonus);
+  skillBonus(strBonus, saveThrows[0], saveThrowsBonus[0], proficiencyBonus);
 });
 
 //reading dexterity and setting bonus
@@ -77,10 +77,10 @@ let dex = document.getElementById("dexterity");
 let dexBonus = document.getElementById("dex-bonus");
 dex.addEventListener("change", () => {
   abilityBonusValue(dex, dexBonus);
-  skillBonus(dexBonus, skills[0], skillsBonus[0], proficencyBonus);
-  skillBonus(dexBonus, skills[15], skillsBonus[15], proficencyBonus);
-  skillBonus(dexBonus, skills[16], skillsBonus[16], proficencyBonus);
-  skillBonus(dexBonus, saveThrows[0], saveThrowsBonus[0], proficencyBonus);
+  skillBonus(dexBonus, skills[0], skillsBonus[0], proficiencyBonus);
+  skillBonus(dexBonus, skills[15], skillsBonus[15], proficiencyBonus);
+  skillBonus(dexBonus, skills[16], skillsBonus[16], proficiencyBonus);
+  skillBonus(dexBonus, saveThrows[0], saveThrowsBonus[0], proficiencyBonus);
 });
 
 //reading constitution and setting bonus
@@ -88,7 +88,7 @@ let con = document.getElementById("constitution");
 let conBonus = document.getElementById("con-bonus");
 con.addEventListener("change", () => {
   abilityBonusValue(con, conBonus);
-  skillBonus(conBonus, saveThrows[0], saveThrowsBonus[0], proficencyBonus);
+  skillBonus(conBonus, saveThrows[0], saveThrowsBonus[0], proficiencyBonus);
 });
 
 //reading wisdom and setting bonus
@@ -96,12 +96,12 @@ let wis = document.getElementById("wisdom");
 let wisBonus = document.getElementById("wis-bonus");
 wis.addEventListener("change", () => {
   abilityBonusValue(wis, wisBonus);
-  skillBonus(wisBonus, skills[1], skillsBonus[1], proficencyBonus);
-  skillBonus(wisBonus, skills[6], skillsBonus[6], proficencyBonus);
-  skillBonus(wisBonus, skills[9], skillsBonus[9], proficencyBonus);
-  skillBonus(wisBonus, skills[11], skillsBonus[11], proficencyBonus);
-  skillBonus(wisBonus, skills[17], skillsBonus[17], proficencyBonus);
-  skillBonus(wisBonus, saveThrows[0], saveThrowsBonus[0], proficencyBonus);
+  skillBonus(wisBonus, skills[1], skillsBonus[1], proficiencyBonus);
+  skillBonus(wisBonus, skills[6], skillsBonus[6], proficiencyBonus);
+  skillBonus(wisBonus, skills[9], skillsBonus[9], proficiencyBonus);
+  skillBonus(wisBonus, skills[11], skillsBonus[11], proficiencyBonus);
+  skillBonus(wisBonus, skills[17], skillsBonus[17], proficiencyBonus);
+  skillBonus(wisBonus, saveThrows[0], saveThrowsBonus[0], proficiencyBonus);
 });
 
 //reading intelgence and setting bonus
@@ -109,12 +109,12 @@ let int = document.getElementById("inteligence");
 let intBonus = document.getElementById("int-bonus");
 int.addEventListener("change", () => {
   abilityBonusValue(int, intBonus);
-  skillBonus(intBonus, skills[2], skillsBonus[2], proficencyBonus);
-  skillBonus(intBonus, skills[5], skillsBonus[5], proficencyBonus);
-  skillBonus(intBonus, skills[8], skillsBonus[8], proficencyBonus);
-  skillBonus(intBonus, skills[10], skillsBonus[10], proficencyBonus);
-  skillBonus(intBonus, skills[14], skillsBonus[14], proficencyBonus);
-  skillBonus(intBonus, saveThrows[0], saveThrowsBonus[0], proficencyBonus);
+  skillBonus(intBonus, skills[2], skillsBonus[2], proficiencyBonus);
+  skillBonus(intBonus, skills[5], skillsBonus[5], proficiencyBonus);
+  skillBonus(intBonus, skills[8], skillsBonus[8], proficiencyBonus);
+  skillBonus(intBonus, skills[10], skillsBonus[10], proficiencyBonus);
+  skillBonus(intBonus, skills[14], skillsBonus[14], proficiencyBonus);
+  skillBonus(intBonus, saveThrows[0], saveThrowsBonus[0], proficiencyBonus);
 });
 
 //reading charisma and setting bonus
@@ -122,11 +122,11 @@ let cha = document.getElementById("charisma");
 let chaBonus = document.getElementById("cha-bonus");
 cha.addEventListener("change", () => {
   abilityBonusValue(cha, chaBonus);
-  skillBonus(chaBonus, skills[4], skillsBonus[4], proficencyBonus);
-  skillBonus(chaBonus, skills[7], skillsBonus[7], proficencyBonus);
-  skillBonus(chaBonus, skills[12], skillsBonus[12], proficencyBonus);
-  skillBonus(chaBonus, skills[13], skillsBonus[13], proficencyBonus);
-  skillBonus(chaBonus, saveThrows[0], saveThrowsBonus[0], proficencyBonus);
+  skillBonus(chaBonus, skills[4], skillsBonus[4], proficiencyBonus);
+  skillBonus(chaBonus, skills[7], skillsBonus[7], proficiencyBonus);
+  skillBonus(chaBonus, skills[12], skillsBonus[12], proficiencyBonus);
+  skillBonus(chaBonus, skills[13], skillsBonus[13], proficiencyBonus);
+  skillBonus(chaBonus, saveThrows[0], saveThrowsBonus[0], proficiencyBonus);
 });
 
 //calculating and saving ability score bonus
@@ -145,99 +145,99 @@ const saveAbility = function(ability){
   }
 }
 
-//reading skills and proficency
-let proficencyBonus = document.getElementById("proficiency");
+//reading skills and proficiency
+let proficiencyBonus = document.getElementById("proficiency");
 let skillsBonus = document.querySelectorAll(".skill-bonus");
 let skills = document.querySelectorAll(".skill");
 
 //setting acrobatics bonus
 skills[0].addEventListener("change", () =>{
-    skillBonus(dexBonus, skills[0], skillsBonus[0], proficencyBonus);
+    skillBonus(dexBonus, skills[0], skillsBonus[0], proficiencyBonus);
 });
 
 //setting animal handling bonus
 skills[1].addEventListener("change", () =>{
-    skillBonus(wisBonus, skills[1], skillsBonus[1], proficencyBonus);
+    skillBonus(wisBonus, skills[1], skillsBonus[1], proficiencyBonus);
 });
 
 //setting arcana bonus
 skills[2].addEventListener("change", () =>{
-    skillBonus(intBonus, skills[2], skillsBonus[2], proficencyBonus);
+    skillBonus(intBonus, skills[2], skillsBonus[2], proficiencyBonus);
 });
 
 //setting athletics bonus
 skills[3].addEventListener("change", () =>{
-    skillBonus(strBonus, skills[3], skillsBonus[3], proficencyBonus);
+    skillBonus(strBonus, skills[3], skillsBonus[3], proficiencyBonus);
 });
 
 //setting deception bonus
 skills[4].addEventListener("change", () =>{
-    skillBonus(chaBonus, skills[4], skillsBonus[4], proficencyBonus);
+    skillBonus(chaBonus, skills[4], skillsBonus[4], proficiencyBonus);
 });
 
 //setting history bonus
 skills[5].addEventListener("change", () =>{
-  skillBonus(intBonus, skills[5], skillsBonus[5], proficencyBonus);
+  skillBonus(intBonus, skills[5], skillsBonus[5], proficiencyBonus);
 });
 
 //setting insight bonus
 skills[6].addEventListener("change", () =>{
-    skillBonus(wisBonus, skills[6], skillsBonus[6], proficencyBonus);
+    skillBonus(wisBonus, skills[6], skillsBonus[6], proficiencyBonus);
 });
 
 //setting intimidation bonus
 skills[7].addEventListener("change", () =>{
-    skillBonus(chaBonus, skills[7], skillsBonus[7], proficencyBonus);
+    skillBonus(chaBonus, skills[7], skillsBonus[7], proficiencyBonus);
 });
 
 //setting invegistation bonus
 skills[8].addEventListener("change", () =>{
-    skillBonus(intBonus, skills[8], skillsBonus[8], proficencyBonus);
+    skillBonus(intBonus, skills[8], skillsBonus[8], proficiencyBonus);
 });
 
 //setting medicine bonus
 skills[9].addEventListener("change", () =>{
-    skillBonus(wisBonus, skills[9], skillsBonus[9], proficencyBonus);
+    skillBonus(wisBonus, skills[9], skillsBonus[9], proficiencyBonus);
 });
 
 //setting nature bonus
 skills[10].addEventListener("change", () =>{
-    skillBonus(intBonus, skills[10], skillsBonus[10], proficencyBonus);
+    skillBonus(intBonus, skills[10], skillsBonus[10], proficiencyBonus);
 });
 
 //setting preception bonus
 skills[11].addEventListener("change", () =>{
-    skillBonus(wisBonus, skills[11], skillsBonus[11], proficencyBonus);
+    skillBonus(wisBonus, skills[11], skillsBonus[11], proficiencyBonus);
 });
 
 //setting performance bonus
 skills[12].addEventListener("change", () =>{
-    skillBonus(chaBonus, skills[12], skillsBonus[12], proficencyBonus);
+    skillBonus(chaBonus, skills[12], skillsBonus[12], proficiencyBonus);
 });
 
 //setting persuasion bonus
 skills[13].addEventListener("change", () =>{
-    skillBonus(chaBonus, skills[13], skillsBonus[13], proficencyBonus);
+    skillBonus(chaBonus, skills[13], skillsBonus[13], proficiencyBonus);
 });
 
 //setting religion bonus
 skills[14].addEventListener("change", () =>{
-    skillBonus(intBonus, skills[14], skillsBonus[14], proficencyBonus);
+    skillBonus(intBonus, skills[14], skillsBonus[14], proficiencyBonus);
 });
 
 //setting shleight of hand bonus
 skills[15].addEventListener("change", () =>{
-    skillBonus(dexBonus, skills[15], skillsBonus[15], proficencyBonus);
+    skillBonus(dexBonus, skills[15], skillsBonus[15], proficiencyBonus);
 });
 
 //setting stealth bonus
 skills[16].addEventListener("change", () =>{
-    skillBonus(dexBonus, skills[16], skillsBonus[16], proficencyBonus);
+    skillBonus(dexBonus, skills[16], skillsBonus[16], proficiencyBonus);
 });
 
 //setting survival bonus
 skills[17].addEventListener("change", () =>{
-    skillBonus(wisBonus, skills[17], skillsBonus[17], proficencyBonus);
+    skillBonus(wisBonus, skills[17], skillsBonus[17], proficiencyBonus);
 });
 
 //reading saving throws
@@ -246,40 +246,40 @@ let saveThrowsBonus = document.querySelectorAll(".saves-bonus");
 
 //setting str save bonus
 saveThrows[0].addEventListener("change", () => {
-    skillBonus(strBonus, saveThrows[0], saveThrowsBonus[0], proficencyBonus);
+    skillBonus(strBonus, saveThrows[0], saveThrowsBonus[0], proficiencyBonus);
 })
 
 //setting dex save bonus
 saveThrows[1].addEventListener("change", () => {
-    skillBonus(dexBonus, saveThrows[1], saveThrowsBonus[1], proficencyBonus);
+    skillBonus(dexBonus, saveThrows[1], saveThrowsBonus[1], proficiencyBonus);
 })
 
 //setting con save bonus
 saveThrows[2].addEventListener("change", () => {
-    skillBonus(conBonus, saveThrows[2], saveThrowsBonus[2], proficencyBonus);
+    skillBonus(conBonus, saveThrows[2], saveThrowsBonus[2], proficiencyBonus);
 })
 
 //setting wis save bonus
 saveThrows[3].addEventListener("change", () => {
-    skillBonus(wisBonus, saveThrows[3], saveThrowsBonus[3], proficencyBonus);
+    skillBonus(wisBonus, saveThrows[3], saveThrowsBonus[3], proficiencyBonus);
 })
 
 //setting int save bonus
 saveThrows[4].addEventListener("change", () => {
-    skillBonus(intBonus, saveThrows[4], saveThrowsBonus[4], proficencyBonus);
+    skillBonus(intBonus, saveThrows[4], saveThrowsBonus[4], proficiencyBonus);
 })
 
 //setting cha save bonus
 saveThrows[5].addEventListener("change", () => {
-    skillBonus(chaBonus, saveThrows[5], saveThrowsBonus[5], proficencyBonus);
+    skillBonus(chaBonus, saveThrows[5], saveThrowsBonus[5], proficiencyBonus);
 })
 
 //calculating and saving skill bonus and saving throws
-const skillBonus = function(baseStatBonus, skill, skillBonus, proficency){
+const skillBonus = function(baseStatBonus, skill, skillBonus, proficiency){
     let value;
     if(skill.checked){
       localStorage.setItem(skill.id, true);
-      value = +baseStatBonus.textContent + +proficency.value;
+      value = +baseStatBonus.textContent + +proficiency.value;
       //console.log(value);
     } else{
         skill.checked = false;
@@ -289,38 +289,38 @@ const skillBonus = function(baseStatBonus, skill, skillBonus, proficency){
     skillBonus.value = value;
 };
 //loading skill bonus and saving throws
-const loadSkillBonusProficency = function(skill){
+const loadSkillBonusproficiency = function(skill){
   if(localStorage.getItem(skill.id) === "true"){
     skill.checked = true;
   }
 }
 //adding listener on profficency bonus change
-proficencyBonus.addEventListener("change", () =>{
-    skillBonus(dexBonus, skills[0], skillsBonus[0], proficencyBonus);
-    skillBonus(wisBonus, skills[1], skillsBonus[1], proficencyBonus);
-    skillBonus(intBonus, skills[2], skillsBonus[2], proficencyBonus);
-    skillBonus(strBonus, skills[3], skillsBonus[3], proficencyBonus);
-    skillBonus(chaBonus, skills[4], skillsBonus[4], proficencyBonus);
-    skillBonus(intBonus, skills[5], skillsBonus[5], proficencyBonus);
-    skillBonus(wisBonus, skills[6], skillsBonus[6], proficencyBonus);
-    skillBonus(chaBonus, skills[7], skillsBonus[7], proficencyBonus);
-    skillBonus(intBonus, skills[8], skillsBonus[8], proficencyBonus);
-    skillBonus(wisBonus, skills[9], skillsBonus[9], proficencyBonus);
-    skillBonus(intBonus, skills[10], skillsBonus[10], proficencyBonus);
-    skillBonus(wisBonus, skills[11], skillsBonus[11], proficencyBonus);
-    skillBonus(chaBonus, skills[12], skillsBonus[12], proficencyBonus);
-    skillBonus(chaBonus, skills[13], skillsBonus[13], proficencyBonus);
-    skillBonus(intBonus, skills[14], skillsBonus[14], proficencyBonus);
-    skillBonus(dexBonus, skills[15], skillsBonus[15], proficencyBonus);
-    skillBonus(dexBonus, skills[16], skillsBonus[16], proficencyBonus);
-    skillBonus(wisBonus, skills[17], skillsBonus[17], proficencyBonus);
-    skillBonus(strBonus, saveThrows[0], saveThrowsBonus[0], proficencyBonus);
-    skillBonus(dexBonus, saveThrows[1], saveThrowsBonus[1], proficencyBonus);
-    skillBonus(conBonus, saveThrows[2], saveThrowsBonus[2], proficencyBonus);
-    skillBonus(wisBonus, saveThrows[3], saveThrowsBonus[3], proficencyBonus);
-    skillBonus(intBonus, saveThrows[4], saveThrowsBonus[4], proficencyBonus);
-    skillBonus(chaBonus, saveThrows[5], saveThrowsBonus[5], proficencyBonus);
-    proficencyBonusSave(proficencyBonus);
+proficiencyBonus.addEventListener("change", () =>{
+    skillBonus(dexBonus, skills[0], skillsBonus[0], proficiencyBonus);
+    skillBonus(wisBonus, skills[1], skillsBonus[1], proficiencyBonus);
+    skillBonus(intBonus, skills[2], skillsBonus[2], proficiencyBonus);
+    skillBonus(strBonus, skills[3], skillsBonus[3], proficiencyBonus);
+    skillBonus(chaBonus, skills[4], skillsBonus[4], proficiencyBonus);
+    skillBonus(intBonus, skills[5], skillsBonus[5], proficiencyBonus);
+    skillBonus(wisBonus, skills[6], skillsBonus[6], proficiencyBonus);
+    skillBonus(chaBonus, skills[7], skillsBonus[7], proficiencyBonus);
+    skillBonus(intBonus, skills[8], skillsBonus[8], proficiencyBonus);
+    skillBonus(wisBonus, skills[9], skillsBonus[9], proficiencyBonus);
+    skillBonus(intBonus, skills[10], skillsBonus[10], proficiencyBonus);
+    skillBonus(wisBonus, skills[11], skillsBonus[11], proficiencyBonus);
+    skillBonus(chaBonus, skills[12], skillsBonus[12], proficiencyBonus);
+    skillBonus(chaBonus, skills[13], skillsBonus[13], proficiencyBonus);
+    skillBonus(intBonus, skills[14], skillsBonus[14], proficiencyBonus);
+    skillBonus(dexBonus, skills[15], skillsBonus[15], proficiencyBonus);
+    skillBonus(dexBonus, skills[16], skillsBonus[16], proficiencyBonus);
+    skillBonus(wisBonus, skills[17], skillsBonus[17], proficiencyBonus);
+    skillBonus(strBonus, saveThrows[0], saveThrowsBonus[0], proficiencyBonus);
+    skillBonus(dexBonus, saveThrows[1], saveThrowsBonus[1], proficiencyBonus);
+    skillBonus(conBonus, saveThrows[2], saveThrowsBonus[2], proficiencyBonus);
+    skillBonus(wisBonus, saveThrows[3], saveThrowsBonus[3], proficiencyBonus);
+    skillBonus(intBonus, saveThrows[4], saveThrowsBonus[4], proficiencyBonus);
+    skillBonus(chaBonus, saveThrows[5], saveThrowsBonus[5], proficiencyBonus);
+    proficiencyBonusSave(proficiencyBonus);
 });
 
 //loading and saving single inputs
