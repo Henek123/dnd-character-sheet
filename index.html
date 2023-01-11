@@ -50,41 +50,41 @@
              <div class="flex-col-nowrap">
                <label for="strength">Strength</label>
                <p class="ability-bonus" id="str-bonus"></p>
-               <input id="strength" class="ability">
+               <input type="number" id="strength" class="ability">
              </div>
              <div class="flex-col-nowrap">
                <label for="dexterity">Dexterity</label>
                <p class="ability-bonus" id="dex-bonus"></p>
-               <input id="dexterity" class="ability">
+               <input type="number" id="dexterity" class="ability">
              </div>
              <div class="flex-col-nowrap">
                <label for="constitution">Constitution</label>
                <p class="ability-bonus" id="con-bonus"></p>
-               <input id="constitution" class="ability">
+               <input type="number" id="constitution" class="ability">
              </div>
              <div class="flex-col-nowrap">
                <label for="wisdom">Wisdom</label>
                <p class="ability-bonus" id="wis-bonus"></p>
-               <input id="wisdom" class="ability">
+               <input type="number" id="wisdom" class="ability">
              </div>
              <div class="flex-col-nowrap">
                <label for="inteligence">Inteligence</label>
                <p class="ability-bonus" id="int-bonus"></p>
-               <input id="inteligence" class="ability">
+               <input type="number" id="inteligence" class="ability">
              </div>
              <div class="flex-col-nowrap">
                <label for="charisma">Charisma</label>
                <p class="ability-bonus" id="cha-bonus"></p>
-               <input id="charisma" class="ability">
+               <input type="number" id="charisma" class="ability">
              </div>
            </div>
            <div class="skill-container">
              <div class="inspiration-container">
-               <input type="text" id="inspiration" class="text-input">
+               <input type="number" id="inspiration" class="text-input">
                <label for="Inspiration">Inspiration</label>
              </div>
              <div class="proficiency-container">
-               <input type="text" id="proficiency">
+               <input type="number" id="proficiency">
                <label for="proficiency">Proficiency Bonus</label>
              </div>
              <div class="saving-throws flex-col">
@@ -94,102 +94,120 @@
                </div>
                <div>
                  <input type="checkbox" id="save-dex" class="saves">
-                 <input class="saves-bonus">
+                 <input type="number" class="saves-bonus">
                  <label for="save-dex">Dexterity</label>
                </div>
                <div>
                  <input type="checkbox" id="save-con" class="saves">
-                 <input class="saves-bonus">
+                 <input type="number" class="saves-bonus">
                  <label for="save-str">Constitution</label>
                </div>
                <div>
                  <input type="checkbox" id="save-wis" class="saves">
-                 <input class="saves-bonus">
+                 <input type="number" class="saves-bonus">
                  <label for="save-wis">Wisdom</label>
                </div>
                <div>
                  <input type="checkbox" id="save-int" class="saves">
-                 <input class="saves-bonus">
+                 <input type="number" class="saves-bonus">
                  <label for="save-int">Inteligence</label>
                </div>
                <div>
                  <input type="checkbox" id="save-cha" class="saves">
-                 <input class="saves-bonus">
+                 <input type="number" class="saves-bonus">
                  <label for="save-cha">Charisma</label>
                </div>
                <p class="description">Saving Throws</p>
              </div>
              <div class="skills">
                <div>
-                 <input type="checkbox" id="acrobatics" class="skill"><input class="skill-bonus">
+                 <input type="checkbox" id="acrobatics" class="skill">
+                <input class="skill-bonus">
                  <label for="acrobatics"> Acrobatics<span class="grey"> (Dex)</span></label>
                </div>
                <div>
-                 <input type="checkbox" id="handling" class="skill"><input class="skill-bonus">
+                 <input type="checkbox" id="handling" class="skill">
+                 <input class="skill-bonus">
                  <label for="handling"> Animal Handling<span class="grey"> (Wis)</span></label>
                </div>
                <div>
-                 <input type="checkbox" id="arcana" class="skill"><input class="skill-bonus">
+                 <input type="checkbox" id="arcana" class="skill">
+                 <input type="number" class="skill-bonus">
                  <label for="arcana"> Arcana<span class="grey"> (Int)</span></label>
                </div>
                <div>
-                 <input type="checkbox" id="athletics" class="skill"><input class="skill-bonus">
+                 <input type="checkbox" id="athletics" class="skill">
+                 <input type="number" class="skill-bonus">
                  <label for="athletics"> Athletics<span class="grey"> (Str)</span></label>
                </div>
                <div>
-                 <input type="checkbox" id="deception" class="skill"><input class="skill-bonus">
+                 <input type="checkbox" id="deception" class="skill">
+                 <input type="number" class="skill-bonus">
                  <label for="deception"> Deception<span class="grey"> (Cha)</span></label>
                </div>
                <div>
-                 <input type="checkbox" id="history" class="skill"><input class="skill-bonus">
+                 <input type="checkbox" id="history" class="skill">
+                 <input type="number" class="skill-bonus">
                  <label for="history"> History<span class="grey"> (Int)</span></label>
                </div>
                <div>
-                 <input type="checkbox" id="insight" class="skill"><input class="skill-bonus">
+                 <input type="checkbox" id="insight" class="skill">
+                 <input type="number" class="skill-bonus">
                  <label for="insight"> Insight<span class="grey"> (Wis)</span></label>
                </div>
                <div>
-                 <input type="checkbox" id="intimidation" class="skill"><input class="skill-bonus">
+                 <input type="checkbox" id="intimidation" class="skill">
+                 <input type="number" class="skill-bonus">
                  <label for="intimidation"> Intimidation<span class="grey"> (Cha)</span></label>
                </div>
                <div>
-                 <input type="checkbox" id="invegistation" class="skill"><input class="skill-bonus">
+                 <input type="checkbox" id="invegistation" class="skill">
+                 <input type="number" class="skill-bonus">
                  <label for="invegistation"> Invegistation<span class="grey"> (Int)</span></label>
                </div>
                <div>
-                 <input type="checkbox" id="medicine" class="skill"><input class="skill-bonus">
+                 <input type="checkbox" id="medicine" class="skill">
+                 <input type="number" class="skill-bonus">
                  <label for="medicine"> Medicine<span class="grey"> (Wis)</span></label>
                </div>
                <div>
-                 <input type="checkbox" id="nature" class="skill"><input class="skill-bonus">
+                 <input type="checkbox" id="nature" class="skill">
+                 <input type="number" class="skill-bonus">
                  <label for="nature"> Nature<span class="grey"> (Int)</span></label>
                </div>
                <div>
-                 <input type="checkbox" id="perception" class="skill"><input class="skill-bonus">
+                 <input type="checkbox" id="perception" class="skill">
+                 <input type="number" class="skill-bonus">
                  <label for="perception"> Perception<span class="grey"> (Wis)</span></label>
                </div>
                <div>
-                 <input type="checkbox" id="performance" class="skill"><input class="skill-bonus">
+                 <input type="checkbox" id="performance" class="skill">
+                 <input type="number" class="skill-bonus">
                  <label for="performance"> Performance<span class="grey"> (Cha)</span></label>
                </div>
                <div>
-                 <input type="checkbox" id="presuasion" class="skill"><input class="skill-bonus">
+                 <input type="checkbox" id="presuasion" class="skill">
+                 <input type="number" class="skill-bonus">
                  <label for="presuasion"> Presuasion<span class="grey"> (Cha)</span></label>
                </div>
                <div>
-                 <input type="checkbox" id="religion" class="skill"><input class="skill-bonus">
+                 <input type="checkbox" id="religion" class="skill">
+                 <input type="number" class="skill-bonus">
                  <label for="religion"> Religion<span class="grey"> (Int)</span></label>
                </div>
                <div>
-                 <input type="checkbox" id="shleight" class="skill"><input class="skill-bonus">
+                 <input type="checkbox" id="shleight" class="skill">
+                 <input type="number" class="skill-bonus">
                  <label for="shleight"> Shleight of hand<span class="grey"> (Dex)</span></label>
                </div>
                <div>
-                 <input type="checkbox" id="stealth" class="skill"><input class="skill-bonus">
+                 <input type="checkbox" id="stealth" class="skill">
+                 <input type="number" class="skill-bonus">
                  <label for="stealth"> Stealth<span class="grey"> (Dex)</span></label>
                </div>
                <div>
-                 <input type="checkbox" id="survival" class="skill"><input class="skill-bonus">
+                 <input type="checkbox" id="survival" class="skill">
+                 <input type="number" class="skill-bonus">
                  <label for="survival"> Survival<span class="grey"> (Wis)</span></label>
                </div>
                <p class="description">Skills</p>
@@ -217,9 +235,11 @@
            <label for="speed">Speed</label>
            <input type="text" id="speed" class="text-input">
          </div>
-         <div id="hp-max">
-           <label class="grey" for="max-hp">Hit Point Maximum</label>
-           <input type="text" id="max-hp" class="text-input">
+         <div class="hp-max">
+           <div class="hp-maximum">
+             <label class="grey" for="max-hp">Hit Point Max</label>
+             <input type="text" id="max-hp" class="text-input">
+           </div>
            <div class="flex-col-rev-nowrap hp-current">
              <label for="current-hp">Current Hit Points</label>
              <input type="text" id="current-hp" class="text-input">
@@ -229,7 +249,7 @@
            <label for="temp-hp">Temporary Hit Points</label><input type="text" id="temp-hp" class="text-input">
          </div>
          <div class="border-square hit-dice">
-           <div class="hp-dice-total">
+           <div class="hp-dice-total flex-row-nowrap">
              <label for="total-dice" class="grey">Total</label>
              <input type="text" id="total-dice" class="text-input">
            </div>
@@ -421,10 +441,10 @@
           <div class="cantrips border-grey">
             <div class="flex-row-nowrap">
               <div>
-                <p>0</p>
+                <p>0 </p>
               </div>
               <div>
-                <p>Cantrips</p>
+                <p> Cantrips</p>
               </div>
             </div>
           </div>

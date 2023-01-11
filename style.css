@@ -1,3 +1,11 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+  -webkit-apperance: none;
+  margin: 0;
+}
+input[type=number]{
+  -moz-appearance: textfield;
+}
 body{
   font-size: 14px; 
   font-weight: 600;
@@ -254,9 +262,8 @@ input[type="checkbox"]:hover{
 #speed{
   border: 2px dashed grey;
 }
-#hp-max{
+.hp-max{
  padding-top: 4px;
- padding-left: 4px;
  width: 95%;
  height: 8%;
  border: 4px double black;
@@ -264,8 +271,15 @@ input[type="checkbox"]:hover{
  margin-bottom: 4px;
  margin-top: 2px;
 }
+.hp-maximum{
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+  margin: auto;
+  margin-bottom: 6px;
+}
 #max-hp{
-  width: 53%;
+  width: 62%;
   height: 1.25em;
   border: 2px dashed grey;
   margin-left: 4px;
@@ -295,7 +309,10 @@ input[type="checkbox"]:hover{
   height: 3em;
 }
 .hp-dice-total{
-  margin-left: 2px;
+  justify-content: space-between;
+  align-items: center;
+  width: 88%;
+  margin: auto;
 }
 .hit-dice{
   width: 45%;
@@ -309,7 +326,7 @@ input[type="checkbox"]:hover{
 }
 #total-dice{
   border: 2px dashed grey;
-  width: 64%;
+  width: 65%;
   margin-top: 8px;
   margin-bottom: 8px;
   text-align: center;
@@ -346,6 +363,7 @@ input[type="checkbox"]:hover{
   border: none;
   background-color: lightgrey;
   margin-top: 2px;
+  text-align: unset;
 }
 .weapon-desc{
   margin-top: 4px;
@@ -605,6 +623,7 @@ textarea{
 .full-width{
   width: 90%;
   margin: 0.1em 0 0.1em 0;
+  text-align: unset;
 }
 .circle-detail{
   width: 95%;
@@ -636,9 +655,10 @@ textarea{
 }
 .cantrips{
   width: 100%;
+  padding-bottom: 4px;
 }
 .cantrip{
-  width: 95%;
+  width: 90%;
   margin: 0.1em 0 0.1em 0;
 }
 .border-grey{
@@ -646,6 +666,7 @@ textarea{
   border-radius: 1em;
 }
 .circle-1{
+  border-top: unset;
   border-bottom: unset;
 }
 .circle-2{
@@ -674,6 +695,10 @@ textarea{
 }
 .circle-9{
   border-top: unset;
+}
+.center{
+  justify-content: center;
+  align-items: center;
 }
 /*
 @media (max-width: 900px){

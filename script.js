@@ -3,12 +3,12 @@ window.addEventListener("DOMContentLoaded", () =>{
   //load proficiency bonus
   inputLoad(proficiencyBonus);
   for(let i = 0; i < 18; i++){
-    inputLoad(skills[i]);
+    loadCheckbox(skills[i]);
   };
 
   //load saving throws
   for(let i = 0; i < 6; i++){
-    inputLoad(saveThrows[i]);
+    loadCheckbox(saveThrows[i]);
   }
 
   //load single inputs
@@ -80,7 +80,7 @@ dex.addEventListener("change", () => {
   skillBonus(dexBonus, skills[0], skillsBonus[0], proficiencyBonus);
   skillBonus(dexBonus, skills[15], skillsBonus[15], proficiencyBonus);
   skillBonus(dexBonus, skills[16], skillsBonus[16], proficiencyBonus);
-  skillBonus(dexBonus, saveThrows[0], saveThrowsBonus[0], proficiencyBonus);
+  skillBonus(dexBonus, saveThrows[1], saveThrowsBonus[1], proficiencyBonus);
 });
 
 //reading constitution and setting bonus
@@ -88,7 +88,7 @@ let con = document.getElementById("constitution");
 let conBonus = document.getElementById("con-bonus");
 con.addEventListener("change", () => {
   abilityBonusValue(con, conBonus);
-  skillBonus(conBonus, saveThrows[0], saveThrowsBonus[0], proficiencyBonus);
+  skillBonus(conBonus, saveThrows[2], saveThrowsBonus[2], proficiencyBonus);
 });
 
 //reading wisdom and setting bonus
@@ -101,7 +101,7 @@ wis.addEventListener("change", () => {
   skillBonus(wisBonus, skills[9], skillsBonus[9], proficiencyBonus);
   skillBonus(wisBonus, skills[11], skillsBonus[11], proficiencyBonus);
   skillBonus(wisBonus, skills[17], skillsBonus[17], proficiencyBonus);
-  skillBonus(wisBonus, saveThrows[0], saveThrowsBonus[0], proficiencyBonus);
+  skillBonus(wisBonus, saveThrows[3], saveThrowsBonus[3], proficiencyBonus);
 });
 
 //reading intelgence and setting bonus
@@ -114,7 +114,7 @@ int.addEventListener("change", () => {
   skillBonus(intBonus, skills[8], skillsBonus[8], proficiencyBonus);
   skillBonus(intBonus, skills[10], skillsBonus[10], proficiencyBonus);
   skillBonus(intBonus, skills[14], skillsBonus[14], proficiencyBonus);
-  skillBonus(intBonus, saveThrows[0], saveThrowsBonus[0], proficiencyBonus);
+  skillBonus(intBonus, saveThrows[4], saveThrowsBonus[4], proficiencyBonus);
 });
 
 //reading charisma and setting bonus
@@ -126,7 +126,7 @@ cha.addEventListener("change", () => {
   skillBonus(chaBonus, skills[7], skillsBonus[7], proficiencyBonus);
   skillBonus(chaBonus, skills[12], skillsBonus[12], proficiencyBonus);
   skillBonus(chaBonus, skills[13], skillsBonus[13], proficiencyBonus);
-  skillBonus(chaBonus, saveThrows[0], saveThrowsBonus[0], proficiencyBonus);
+  skillBonus(chaBonus, saveThrows[5], saveThrowsBonus[5], proficiencyBonus);
 });
 
 //calculating and saving ability score bonus
@@ -320,7 +320,7 @@ proficiencyBonus.addEventListener("change", () =>{
     skillBonus(wisBonus, saveThrows[3], saveThrowsBonus[3], proficiencyBonus);
     skillBonus(intBonus, saveThrows[4], saveThrowsBonus[4], proficiencyBonus);
     skillBonus(chaBonus, saveThrows[5], saveThrowsBonus[5], proficiencyBonus);
-    proficiencyBonusSave(proficiencyBonus);
+    inputSave(proficiencyBonus);
 });
 
 //loading and saving single inputs
@@ -338,6 +338,23 @@ let characterName = document.querySelector("#char-name")
 characterName.addEventListener("change", () => {
   inputSave(characterName);
 });
+//loading checkbox inputs
+const loadCheckbox = function(input){
+  if(localStorage.getItem(input.id) !== null){
+    input.checked = true;
+  }
+  return;
+};
+
+//saving checkbox input
+const saveCheckbox = function(input){
+  if(input.checked === true){
+    localStorage.setItem(input.id, true);
+  } else{
+    localStorage.removeItem(input.id, true);
+  }
+};
+
 //testing
 
 let textInputs = document.querySelectorAll(".text-input");
@@ -360,12 +377,70 @@ document.addEventListener("DOMContentLoaded", () => {
   createSpellInput(8, 7);
   createSpellInput(9, 7);
   
-let example = document.querySelectorAll(".spell-lvl-1");
-//console.log(example);
-})
+//saving and loading circle 1 prepared mark
+  let circle1Prepared = document.querySelectorAll(".prepared-1");
+  for(let i = 0; i < circle1Prepared.length; i++){
+    circle1Prepared[i].addEventListener("change", () => {
+      saveCheckbox(circle1Prepared[i]);
+      });
+    };
+   for(let i = 0; i < circle1Prepared.length; i++){
+      loadCheckbox(circle1Prepared[i]);
+   };
+//saving and loading circle 1 spells
+  // let circle1Spells = document.querySelectorAll(".spell-lvl-1");
+  // for(let i = 0; i < circle1Spells.length; i++){
+  //   circle1Spells[i].addEventListener("change", () => {
+  //     inputSave(circle1Spells[i]);
+  //     });
+  //   };
+  //  for(let i = 0; i < circle1Spells.length; i++){
+  //     inputLoad(circle1Spells[i]);
+  //  };
+  
+  //reding spells input
+  let spellCircles = [];
+  for(let spellLevel = 1; spellLevel < 10; spellLevel++){
+   spellCircles.push(document.querySelectorAll(`.spell-lvl-${spellLevel}`));
+  };
+  
+  //loading and saving spells
+  for(let spellLevel = 0; spellLevel < 9; spellLevel++){
+    for(let spellNumber = 0; spellNumber < spellCircles[spellLevel].length; spellNumber++){
+         spellCircles[spellLevel][spellNumber].addEventListener("change", () => {
+       inputSave(spellCircles[spellLevel][spellNumber]);
+       });
+     };
+    for(let spellNumber = 0; spellNumber < spellCircles[spellLevel].length; spellNumber++){
+       inputLoad(spellCircles[spellLevel][spellNumber]);
+    }
+  }
+  
+  
+  //reding prepared spells checkbox
+  let spellCirclesPrepared = [];
+  for(let spellLevel = 1; spellLevel < 10; spellLevel++){
+   spellCirclesPrepared.push(document.querySelectorAll(`.prepared-${spellLevel}`));
+  };
+  
+  //loading and saving prepared spells checkbox
+  for(let spellLevel = 0; spellLevel < 9; spellLevel++){
+    for(let spellNumber = 0; spellNumber < spellCirclesPrepared[spellLevel].length; spellNumber++){
+         spellCirclesPrepared[spellLevel][spellNumber].addEventListener("change", () => {
+       saveCheckbox(spellCirclesPrepared[spellLevel][spellNumber]);
+       });
+     };
+    for(let spellNumber = 0; spellNumber < spellCirclesPrepared[spellLevel].length; spellNumber++){
+       loadCheckbox(spellCirclesPrepared[spellLevel][spellNumber]);
+    }
+  }
+});
+
 
 const createCantripInput = function(num){
   let div = document.createElement("div");
+  div.classList.add("flex-row-nowrap");
+  div.classList.add("center");
   let input = document.createElement("input");
   input.classList.add(`cantrip`)
   div.append(input)
@@ -382,6 +457,7 @@ const createSpellInput = function(circle, num){
   let div = document.createElement("div");
   div.classList.add("flex-row-nowrap");
   div.classList.add("full-width");
+  div.classList.add("center");
   let checkbox = document.createElement("input");
   checkbox.type = "checkbox";
   checkbox.classList.add(`prepared-${circle}`);
@@ -392,10 +468,11 @@ const createSpellInput = function(circle, num){
   let parent = document.querySelector(`.circle-${circle}`);
   //console.log(circle);
   for(let i = 0; i < num; i++){
+    input.id = `spell-lvl-${circle}-${i}`
+    checkbox.id = `prepared-${circle}-${i}`
     parent.appendChild(div.cloneNode(true));
     //console.log(i);
   }
   return;
 };
-let example = document.querySelector(".spell-lvl-1");
-//console.log(example);
+
