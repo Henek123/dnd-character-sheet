@@ -1,6 +1,6 @@
 input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button{
-  -webkit-apperance: none;
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
   margin: 0;
 }
 input[type=number]{
@@ -42,7 +42,7 @@ body{
   flex-wrap: nowrap;
 }
 main{
-  max-width: 910px;
+  max-width: 980px;
   /* height: auto; */
   margin-left: auto;
   margin-right: auto;
@@ -626,7 +626,7 @@ textarea{
   text-align: unset;
 }
 .circle-detail{
-  width: 95%;
+  width: 98%;
   justify-content: space-between;
   font-size: 12px;
   
@@ -699,6 +699,64 @@ textarea{
 .center{
   justify-content: center;
   align-items: center;
+}
+.spell-level{
+  border: solid 2px black;
+  border-radius: 10px 50px 50px 10px/ 20px 30px 30px 20px;
+  width: 15%;
+  text-align: center;
+  margin: 2px;
+  margin-right: 0;
+  position: relative;
+  z-index: 3;
+  background-color: white;
+}
+.total-slots{
+  margin: 2px 0;
+  border: 2px solid black;
+  border-radius: 10px 20px 20px 10px/ 10px 30px 30px 10px;
+    position: relative;
+  right: 6px;
+  z-index: 2;
+  background-color: white;
+  width: 25%;
+}
+.expended-slots{
+  margin: 2px 0;
+  border: 2px solid black;
+  border-radius: 10px 30px 30px 10px/ 10px 20px 20px 10px;
+  position: relative;
+  right: 12px;
+  z-index: 1;
+  background-color: white;
+  width: 60%;
+}
+.cantrips-border{
+  margin: 2px;
+  border: 2px solid black;
+  border-radius: 10px 30px 30px 10px/ 10px 20px 20px 10px;
+  position: relative;
+  right: 12px;
+  z-index: 1;
+  background-color: white;
+  width: 82%;
+  text-align: center;
+}
+.spell-level-desc > p{
+  margin-bottom: 0;
+}
+.spell-level-desc{
+  width: 15%;
+  position: relative;
+  right: 4px;
+}
+.expended-slots-desc{
+  width: 60%;
+}
+.total-slots-desc{
+  width: 25%;
+  position: relative;
+  right: 8px;
 }
 /*
 @media (max-width: 900px){

@@ -1,5 +1,7 @@
+let textInputs = document.querySelectorAll(".text-input");
 //loading saved data on load and calculating skills bonus
 window.addEventListener("DOMContentLoaded", () =>{
+  
   //load proficiency bonus
   inputLoad(proficiencyBonus);
   for(let i = 0; i < 18; i++){
@@ -37,6 +39,7 @@ window.addEventListener("DOMContentLoaded", () =>{
   skillBonus(wisBonus, skills[11], skillsBonus[11], proficiencyBonus);
   skillBonus(wisBonus, skills[17], skillsBonus[17], proficiencyBonus);
   skillBonus(wisBonus, saveThrows[3], saveThrowsBonus[3], proficiencyBonus);
+  passiveWisValue(passiveWis, wisBonus, proficiencyBonus, skills[11]);
   
   loadAbilityScore(int, intBonus);
   skillBonus(intBonus, skills[2], skillsBonus[2], proficiencyBonus);
@@ -102,6 +105,7 @@ wis.addEventListener("change", () => {
   skillBonus(wisBonus, skills[11], skillsBonus[11], proficiencyBonus);
   skillBonus(wisBonus, skills[17], skillsBonus[17], proficiencyBonus);
   skillBonus(wisBonus, saveThrows[3], saveThrowsBonus[3], proficiencyBonus);
+  passiveWisValue(passiveWis, wisBonus, proficiencyBonus, skills[11]);
 });
 
 //reading intelgence and setting bonus
@@ -205,9 +209,10 @@ skills[10].addEventListener("change", () =>{
     skillBonus(intBonus, skills[10], skillsBonus[10], proficiencyBonus);
 });
 
-//setting preception bonus
+//setting perception bonus
 skills[11].addEventListener("change", () =>{
     skillBonus(wisBonus, skills[11], skillsBonus[11], proficiencyBonus);
+  passiveWisValue(passiveWis, wisBonus, proficiencyBonus, skills[11]);
 });
 
 //setting performance bonus
@@ -321,6 +326,7 @@ proficiencyBonus.addEventListener("change", () =>{
     skillBonus(intBonus, saveThrows[4], saveThrowsBonus[4], proficiencyBonus);
     skillBonus(chaBonus, saveThrows[5], saveThrowsBonus[5], proficiencyBonus);
     inputSave(proficiencyBonus);
+  passiveWisValue(passiveWis, wisBonus, proficiencyBonus, skills[11]);
 });
 
 //loading and saving single inputs
@@ -355,9 +361,19 @@ const saveCheckbox = function(input){
   }
 };
 
+//calculating passive wisdom
+let passiveWis = document.querySelector("#passive-wis");
+const passiveWisValue = function(passiveWis, wisBonus, proficiencyBonus, skills){
+    let value = 10 + +wisBonus.textContent;
+    if(skills.checked === true){
+      value += +proficiencyBonus.value;
+    }
+  console.log(skills, skills.checked)
+    passiveWis.value = value;
+}
 //testing
 
-let textInputs = document.querySelectorAll(".text-input");
+
 for(let i = 0; i < textInputs.length; i++){
   textInputs[i].addEventListener("change", () => {
     inputSave(textInputs[i]);
@@ -377,63 +393,42 @@ document.addEventListener("DOMContentLoaded", () => {
   createSpellInput(8, 7);
   createSpellInput(9, 7);
   
-//saving and loading circle 1 prepared mark
-  let circle1Prepared = document.querySelectorAll(".prepared-1");
-  for(let i = 0; i < circle1Prepared.length; i++){
-    circle1Prepared[i].addEventListener("change", () => {
-      saveCheckbox(circle1Prepared[i]);
-      });
-    };
-   for(let i = 0; i < circle1Prepared.length; i++){
-      loadCheckbox(circle1Prepared[i]);
-   };
-//saving and loading circle 1 spells
-  // let circle1Spells = document.querySelectorAll(".spell-lvl-1");
-  // for(let i = 0; i < circle1Spells.length; i++){
-  //   circle1Spells[i].addEventListener("change", () => {
-  //     inputSave(circle1Spells[i]);
-  //     });
-  //   };
-  //  for(let i = 0; i < circle1Spells.length; i++){
-  //     inputLoad(circle1Spells[i]);
-  //  };
-  
-  //reding spells input
-  let spellCircles = [];
-  for(let spellLevel = 1; spellLevel < 10; spellLevel++){
-   spellCircles.push(document.querySelectorAll(`.spell-lvl-${spellLevel}`));
-  };
-  
-  //loading and saving spells
-  for(let spellLevel = 0; spellLevel < 9; spellLevel++){
-    for(let spellNumber = 0; spellNumber < spellCircles[spellLevel].length; spellNumber++){
-         spellCircles[spellLevel][spellNumber].addEventListener("change", () => {
-       inputSave(spellCircles[spellLevel][spellNumber]);
-       });
-     };
-    for(let spellNumber = 0; spellNumber < spellCircles[spellLevel].length; spellNumber++){
-       inputLoad(spellCircles[spellLevel][spellNumber]);
-    }
-  }
-  
-  
-  //reding prepared spells checkbox
-  let spellCirclesPrepared = [];
-  for(let spellLevel = 1; spellLevel < 10; spellLevel++){
-   spellCirclesPrepared.push(document.querySelectorAll(`.prepared-${spellLevel}`));
-  };
-  
-  //loading and saving prepared spells checkbox
-  for(let spellLevel = 0; spellLevel < 9; spellLevel++){
-    for(let spellNumber = 0; spellNumber < spellCirclesPrepared[spellLevel].length; spellNumber++){
-         spellCirclesPrepared[spellLevel][spellNumber].addEventListener("change", () => {
-       saveCheckbox(spellCirclesPrepared[spellLevel][spellNumber]);
-       });
-     };
-    for(let spellNumber = 0; spellNumber < spellCirclesPrepared[spellLevel].length; spellNumber++){
-       loadCheckbox(spellCirclesPrepared[spellLevel][spellNumber]);
-    }
-  }
+   //reding spells input 
+   let spellCircles = []; 
+   for(let spellLevel = 1; spellLevel < 10; spellLevel++){ 
+    spellCircles.push(document.querySelectorAll(`.spell-lvl-${spellLevel}`)); 
+   }; 
+    
+   //loading and saving spells 
+   for(let spellLevel = 0; spellLevel < 9; spellLevel++){ 
+     for(let spellNumber = 0; spellNumber < spellCircles[spellLevel].length; spellNumber++){ 
+          spellCircles[spellLevel][spellNumber].addEventListener("change", () => { 
+        inputSave(spellCircles[spellLevel][spellNumber]); 
+        }); 
+      }; 
+     for(let spellNumber = 0; spellNumber < spellCircles[spellLevel].length; spellNumber++){ 
+        inputLoad(spellCircles[spellLevel][spellNumber]); 
+     } 
+   } 
+    
+    
+   //reding prepared spells checkbox 
+   let spellCirclesPrepared = []; 
+   for(let spellLevel = 1; spellLevel < 10; spellLevel++){ 
+    spellCirclesPrepared.push(document.querySelectorAll(`.prepared-${spellLevel}`)); 
+   }; 
+    
+   //loading and saving prepared spells checkbox 
+   for(let spellLevel = 0; spellLevel < 9; spellLevel++){ 
+     for(let spellNumber = 0; spellNumber < spellCirclesPrepared[spellLevel].length; spellNumber++){ 
+          spellCirclesPrepared[spellLevel][spellNumber].addEventListener("change", () => { 
+        saveCheckbox(spellCirclesPrepared[spellLevel][spellNumber]); 
+        }); 
+      }; 
+     for(let spellNumber = 0; spellNumber < spellCirclesPrepared[spellLevel].length; spellNumber++){ 
+        loadCheckbox(spellCirclesPrepared[spellLevel][spellNumber]); 
+     } 
+   }
 });
 
 
