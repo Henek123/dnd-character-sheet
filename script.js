@@ -154,6 +154,96 @@ let proficiencyBonus = document.getElementById("proficiency");
 let skillsBonus = document.querySelectorAll(".skill-bonus");
 let skills = document.querySelectorAll(".skill");
 
+//comparing user input for acrobatics
+skillsBonus[0].addEventListener("change", () =>{
+  compare(dexBonus, skills[0], skillsBonus[0], proficiencyBonus);
+});
+
+//comparing user input for animal handling
+skillsBonus[1].addEventListener("change", () =>{
+  compare(wisBonus, skills[1], skillsBonus[1], proficiencyBonus);
+});
+
+//comparing user input for arcana
+skillsBonus[2].addEventListener("change", () =>{
+  compare(intBonus, skills[2], skillsBonus[2], proficiencyBonus);
+});
+
+//comparing user input for athletics
+skillsBonus[3].addEventListener("change", () =>{
+  compare(strBonus, skills[3], skillsBonus[3], proficiencyBonus);
+});
+
+//comparing user input for deception
+skillsBonus[4].addEventListener("change", () =>{
+  compare(chaBonus, skills[4], skillsBonus[4], proficiencyBonus);
+});
+
+//comparing user input for history
+skillsBonus[5].addEventListener("change", () =>{
+  compare(intBonus, skills[5], skillsBonus[5], proficiencyBonus);
+});
+
+//comparing user input for insight
+skillsBonus[6].addEventListener("change", () =>{
+  compare(wisBonus, skills[6], skillsBonus[6], proficiencyBonus);
+});
+
+//comparing user input for intimidation
+skillsBonus[7].addEventListener("change", () =>{
+  compare(chaBonus, skills[7], skillsBonus[7], proficiencyBonus);
+});
+
+//comparing user input for invegistation
+skillsBonus[8].addEventListener("change", () =>{
+  compare(intBonus, skills[8], skillsBonus[8], proficiencyBonus);
+});
+
+//comparing user input for medicine
+skillsBonus[9].addEventListener("change", () =>{
+  compare(wisBonus, skills[9], skillsBonus[9], proficiencyBonus);
+});
+
+//comparing user input for nature
+skillsBonus[10].addEventListener("change", () =>{
+  compare(intBonus, skills[10], skillsBonus[10], proficiencyBonus);
+});
+
+//comparing user input for preception
+skillsBonus[11].addEventListener("change", () =>{
+  compare(wisBonus, skills[11], skillsBonus[11], proficiencyBonus);
+});
+
+//comparing user input for performance
+skillsBonus[12].addEventListener("change", () =>{
+  compare(chaBonus, skills[12], skillsBonus[12], proficiencyBonus);
+});
+
+//comparing user input for persuasion
+skillsBonus[13].addEventListener("change", () =>{
+  compare(chaBonus, skills[13], skillsBonus[13], proficiencyBonus);
+});
+
+//comparing user input for religion
+skillsBonus[14].addEventListener("change", () =>{
+  compare(intBonus, skills[14], skillsBonus[14], proficiencyBonus);
+});
+
+//comparing user input for sleight of hand
+skillsBonus[15].addEventListener("change", () =>{
+  compare(dexBonus, skills[15], skillsBonus[15], proficiencyBonus);
+});
+
+//comparing user input for stealth
+skillsBonus[16].addEventListener("change", () =>{
+  compare(dexBonus, skills[16], skillsBonus[16], proficiencyBonus);
+});
+
+//comparing user input for survival
+skillsBonus[17].addEventListener("change", () =>{
+  compare(wisBonus, skills[17], skillsBonus[17], proficiencyBonus);
+});
+
 //setting acrobatics bonus
 skills[0].addEventListener("change", () =>{
     skillBonus(dexBonus, skills[0], skillsBonus[0], proficiencyBonus);
@@ -230,7 +320,7 @@ skills[14].addEventListener("change", () =>{
     skillBonus(intBonus, skills[14], skillsBonus[14], proficiencyBonus);
 });
 
-//setting shleight of hand bonus
+//setting sleight of hand bonus
 skills[15].addEventListener("change", () =>{
     skillBonus(dexBonus, skills[15], skillsBonus[15], proficiencyBonus);
 });
@@ -280,18 +370,23 @@ saveThrows[5].addEventListener("change", () => {
 })
 
 //calculating and saving skill bonus and saving throws
-const skillBonus = function(baseStatBonus, skill, skillBonus, proficiency){
+const skillBonus = function(baseStatBonus, skill, skillBonusValue, proficiency){
+    let id = skillBonusValue.id;
     let value;
     if(skill.checked){
       localStorage.setItem(skill.id, true);
       value = +baseStatBonus.textContent + +proficiency.value;
-      //console.log(value);
     } else{
         skill.checked = false;
       localStorage.removeItem(skill.id);
         value = +baseStatBonus.textContent;
     }
-    skillBonus.value = value;
+  localStorage.setItem(id, value);
+  if(localStorage.getItem(`${id}-user`) !== null){
+    value += +localStorage.getItem(`${id}-user`);
+  }
+    skillBonusValue.value = value;
+  return value;
 };
 //loading skill bonus and saving throws
 const loadSkillBonusproficiency = function(skill){
@@ -373,13 +468,14 @@ const passiveWisValue = function(passiveWis, wisBonus, proficiencyBonus, skills)
 }
 //testing
 
-
+//saving inputs with class text-input
 for(let i = 0; i < textInputs.length; i++){
   textInputs[i].addEventListener("change", () => {
     inputSave(textInputs[i]);
   })
 };
 
+//adding inputs for spells
 document.addEventListener("DOMContentLoaded", () => {
   inputLoad(characterName);
   createCantripInput(8);
@@ -393,42 +489,42 @@ document.addEventListener("DOMContentLoaded", () => {
   createSpellInput(8, 7);
   createSpellInput(9, 7);
   
-   //reding spells input 
-   let spellCircles = []; 
-   for(let spellLevel = 1; spellLevel < 10; spellLevel++){ 
-    spellCircles.push(document.querySelectorAll(`.spell-lvl-${spellLevel}`)); 
-   }; 
-    
-   //loading and saving spells 
-   for(let spellLevel = 0; spellLevel < 9; spellLevel++){ 
-     for(let spellNumber = 0; spellNumber < spellCircles[spellLevel].length; spellNumber++){ 
-          spellCircles[spellLevel][spellNumber].addEventListener("change", () => { 
-        inputSave(spellCircles[spellLevel][spellNumber]); 
-        }); 
-      }; 
-     for(let spellNumber = 0; spellNumber < spellCircles[spellLevel].length; spellNumber++){ 
-        inputLoad(spellCircles[spellLevel][spellNumber]); 
-     } 
-   } 
-    
-    
-   //reding prepared spells checkbox 
-   let spellCirclesPrepared = []; 
-   for(let spellLevel = 1; spellLevel < 10; spellLevel++){ 
-    spellCirclesPrepared.push(document.querySelectorAll(`.prepared-${spellLevel}`)); 
-   }; 
-    
-   //loading and saving prepared spells checkbox 
-   for(let spellLevel = 0; spellLevel < 9; spellLevel++){ 
-     for(let spellNumber = 0; spellNumber < spellCirclesPrepared[spellLevel].length; spellNumber++){ 
-          spellCirclesPrepared[spellLevel][spellNumber].addEventListener("change", () => { 
-        saveCheckbox(spellCirclesPrepared[spellLevel][spellNumber]); 
-        }); 
-      }; 
-     for(let spellNumber = 0; spellNumber < spellCirclesPrepared[spellLevel].length; spellNumber++){ 
-        loadCheckbox(spellCirclesPrepared[spellLevel][spellNumber]); 
-     } 
-   }
+   //reding spells input 
+   let spellCircles = []; 
+   for(let spellLevel = 1; spellLevel < 10; spellLevel++){ 
+    spellCircles.push(document.querySelectorAll(`.spell-lvl-${spellLevel}`)); 
+   }; 
+    
+   //loading and saving spells 
+  for(let spellLevel = 0; spellLevel < 9; spellLevel++){ 
+    for(let spellNumber = 0; spellNumber < spellCircles[spellLevel].length; spellNumber++){ 
+        spellCircles[spellLevel][spellNumber].addEventListener("change", () => { 
+        inputSave(spellCircles[spellLevel][spellNumber]); 
+        }); 
+      }; 
+    for(let spellNumber = 0; spellNumber < spellCircles[spellLevel].length; spellNumber++){ 
+      inputLoad(spellCircles[spellLevel][spellNumber]); 
+     } 
+   } 
+    
+    
+   //reding prepared spells checkbox 
+  let spellCirclesPrepared = []; 
+  for(let spellLevel = 1; spellLevel < 10; spellLevel++){ 
+    spellCirclesPrepared.push(document.querySelectorAll(`.prepared-${spellLevel}`)); 
+  }; 
+    
+  //loading and saving prepared spells checkbox 
+  for(let spellLevel = 0; spellLevel < 9; spellLevel++){ 
+    for(let spellNumber = 0; spellNumber < spellCirclesPrepared[spellLevel].length; spellNumber++){ 
+      spellCirclesPrepared[spellLevel][spellNumber].addEventListener("change", () => { 
+      saveCheckbox(spellCirclesPrepared[spellLevel][spellNumber]); 
+      }); 
+    }; 
+    for(let spellNumber = 0; spellNumber < spellCirclesPrepared[spellLevel].length; spellNumber++){ 
+      loadCheckbox(spellCirclesPrepared[spellLevel][spellNumber]); 
+    } 
+  }
 });
 
 
@@ -471,3 +567,19 @@ const createSpellInput = function(circle, num){
   return;
 };
 
+//comparing calculated proficiency bonus with user input if larger saving diffrence to local storage
+const compare = function(baseStatBonus, skill, skillBonusValue, proficiency){
+  let id = skillBonusValue.id;
+  let userInput = skillBonusValue.value
+  let calculatedValue = localStorage.getItem(id);
+  if(calculatedValue < userInput){
+    let diffrence = userInput - calculatedValue;
+    localStorage.setItem(`${id}-user`, diffrence);
+  } else{
+    if(localStorage.getItem(`${id}-user`) !== null){
+      localStorage.removeItem(`${id}-user`);
+    }
+  }
+  skillBonus(baseStatBonus, skill, skillBonusValue, proficiency);
+  return;
+};
