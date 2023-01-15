@@ -533,6 +533,7 @@ const createCantripInput = function(num){
   div.classList.add("flex-row-nowrap");
   div.classList.add("center");
   let input = document.createElement("input");
+  input.type = "text";
   input.classList.add(`cantrip`)
   div.append(input)
   let parent = document.querySelector(`.cantrips`);
@@ -553,6 +554,7 @@ const createSpellInput = function(circle, num){
   checkbox.type = "checkbox";
   checkbox.classList.add(`prepared-${circle}`);
   let input = document.createElement("input");
+  input.type = "text";
   input.classList.add(`spell-lvl-${circle}`);
   input.classList.add(`full-width`);
   div.append(checkbox, input);
