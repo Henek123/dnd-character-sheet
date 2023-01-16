@@ -158,9 +158,6 @@ input{
 #proficiency{
   width: 8%;
   margin: 0.5em 0 0.5em 0; 
-}
-#proficiency,
-#inspiration{
   border: solid black 2px;
 }
 .proficiency-container,
@@ -642,16 +639,30 @@ textarea{
   border-radius: 0.5em;
 }
 .total-slots{
-  width: 40%;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 2px 0;
+  border: 2px solid black;
+  border-radius: 10px 20px 20px 10px/ 10px 30px 30px 10px;
+    position: relative;
+  right: 6px;
+  z-index: 2;
+  background-color: white;
+  width: 25%;
 }
 .expended-slots{
-  width: 55%;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 2px 0;
+  border: 2px solid black;
+  border-radius: 10px 30px 30px 10px/ 10px 20px 20px 10px;
+  position: relative;
+  right: 12px;
+  z-index: 1;
+  background-color: white;
+  width: 60%;
 }
 .cantrips{
   width: 100%;
@@ -710,26 +721,6 @@ textarea{
   position: relative;
   z-index: 3;
   background-color: white;
-}
-.total-slots{
-  margin: 2px 0;
-  border: 2px solid black;
-  border-radius: 10px 20px 20px 10px/ 10px 30px 30px 10px;
-    position: relative;
-  right: 6px;
-  z-index: 2;
-  background-color: white;
-  width: 25%;
-}
-.expended-slots{
-  margin: 2px 0;
-  border: 2px solid black;
-  border-radius: 10px 30px 30px 10px/ 10px 20px 20px 10px;
-  position: relative;
-  right: 12px;
-  z-index: 1;
-  background-color: white;
-  width: 60%;
 }
 .cantrips-border{
   margin: 2px;

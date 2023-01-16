@@ -1,4 +1,6 @@
+//reading text inputs
 let textInputs = document.querySelectorAll(".text-input");
+
 //loading saved data on load and calculating skills bonus
 window.addEventListener("DOMContentLoaded", () =>{
   
@@ -55,10 +57,49 @@ window.addEventListener("DOMContentLoaded", () =>{
   skillBonus(chaBonus, skills[12], skillsBonus[12], proficiencyBonus);
   skillBonus(chaBonus, skills[13], skillsBonus[13], proficiencyBonus);
   skillBonus(chaBonus, saveThrows[5], saveThrowsBonus[5], proficiencyBonus);
+  
+  //reading class and level
+  let classAndLvl = document.getElementById("class");
+  proficiencyBonusFromLvl(classAndLvl, proficiencyBonus);
+  
+  //adding lvl change and proficiency change listener
+  let arr = [classAndLvl, proficiencyBonus]
+  arr.forEach(element => {
+    element.addEventListener("change", () =>{
+    proficiencyBonusFromLvl(classAndLvl, proficiencyBonus);
+    skillBonus(dexBonus, skills[0], skillsBonus[0], proficiencyBonus);
+    skillBonus(wisBonus, skills[1], skillsBonus[1], proficiencyBonus);
+    skillBonus(intBonus, skills[2], skillsBonus[2], proficiencyBonus);
+    skillBonus(strBonus, skills[3], skillsBonus[3], proficiencyBonus);
+    skillBonus(chaBonus, skills[4], skillsBonus[4], proficiencyBonus);
+    skillBonus(intBonus, skills[5], skillsBonus[5], proficiencyBonus);
+    skillBonus(wisBonus, skills[6], skillsBonus[6], proficiencyBonus);
+    skillBonus(chaBonus, skills[7], skillsBonus[7], proficiencyBonus);
+    skillBonus(intBonus, skills[8], skillsBonus[8], proficiencyBonus);
+    skillBonus(wisBonus, skills[9], skillsBonus[9], proficiencyBonus);
+    skillBonus(intBonus, skills[10], skillsBonus[10], proficiencyBonus);
+    skillBonus(wisBonus, skills[11], skillsBonus[11], proficiencyBonus);
+    skillBonus(chaBonus, skills[12], skillsBonus[12], proficiencyBonus);
+    skillBonus(chaBonus, skills[13], skillsBonus[13], proficiencyBonus);
+    skillBonus(intBonus, skills[14], skillsBonus[14], proficiencyBonus);
+    skillBonus(dexBonus, skills[15], skillsBonus[15], proficiencyBonus);
+    skillBonus(dexBonus, skills[16], skillsBonus[16], proficiencyBonus);
+    skillBonus(wisBonus, skills[17], skillsBonus[17], proficiencyBonus);
+    skillBonus(strBonus, saveThrows[0], saveThrowsBonus[0], proficiencyBonus);
+    skillBonus(dexBonus, saveThrows[1], saveThrowsBonus[1], proficiencyBonus);
+    skillBonus(conBonus, saveThrows[2], saveThrowsBonus[2], proficiencyBonus);
+    skillBonus(wisBonus, saveThrows[3], saveThrowsBonus[3], proficiencyBonus);
+    skillBonus(intBonus, saveThrows[4], saveThrowsBonus[4], proficiencyBonus);
+    skillBonus(chaBonus, saveThrows[5], saveThrowsBonus[5], proficiencyBonus);
+    inputSave(proficiencyBonus);
+    passiveWisValue(passiveWis, wisBonus, proficiencyBonus, skills[11]);
+    })
+  })
+
 });
 
 //reading saved stats
-const loadAbilityScore = function(ability, abilityBonus){
+function loadAbilityScore(ability, abilityBonus){
   if(localStorage.getItem(ability.id) !== null){
     ability.value = localStorage.getItem(ability.id);
   }
@@ -134,7 +175,7 @@ cha.addEventListener("change", () => {
 });
 
 //calculating and saving ability score bonus
-const abilityBonusValue = function(ability, abilityBonus){
+function abilityBonusValue(ability, abilityBonus){
   if(ability.value){
     abilityBonus.textContent = Math.floor((ability.value - 10) / 2);
   } else{
@@ -143,7 +184,7 @@ const abilityBonusValue = function(ability, abilityBonus){
   saveAbility(ability);
 };
 //saving ability score bonus
-const saveAbility = function(ability){
+function saveAbility(ability){
   if(localStorage.getItem(ability.id) !== ability.value){
     localStorage.setItem(ability.id, ability.value)
   }
@@ -339,39 +380,66 @@ skills[17].addEventListener("change", () =>{
 let saveThrows = document.querySelectorAll(".saves");
 let saveThrowsBonus = document.querySelectorAll(".saves-bonus");
 
-//setting str save bonus
+//setting and comparing str save bonus
+saveThrowsBonus[0].addEventListener("change", () => {
+    compare(strBonus, saveThrows[0], saveThrowsBonus[0], proficiencyBonus);
+})
 saveThrows[0].addEventListener("change", () => {
     skillBonus(strBonus, saveThrows[0], saveThrowsBonus[0], proficiencyBonus);
 })
 
-//setting dex save bonus
+//setting and comparing str save bonus
+saveThrowsBonus[0].addEventListener("change", () => {
+  compare(strBonus, saveThrows[0], saveThrowsBonus[0], proficiencyBonus);
+})
+saveThrows[0].addEventListener("change", () => {
+  skillBonus(strBonus, saveThrows[0], saveThrowsBonus[0], proficiencyBonus);
+})
+
+//setting and comparing dex save bonus
+saveThrowsBonus[1].addEventListener("change", () => {
+  compare(dexBonus, saveThrows[1], saveThrowsBonus[1], proficiencyBonus);
+})
 saveThrows[1].addEventListener("change", () => {
-    skillBonus(dexBonus, saveThrows[1], saveThrowsBonus[1], proficiencyBonus);
+  skillBonus(dexBonus, saveThrows[1], saveThrowsBonus[1], proficiencyBonus);
 })
 
-//setting con save bonus
+//setting and comparing con save bonus
+saveThrowsBonus[2].addEventListener("change", () => {
+  compare(conBonus, saveThrows[2], saveThrowsBonus[2], proficiencyBonus);
+})
 saveThrows[2].addEventListener("change", () => {
-    skillBonus(conBonus, saveThrows[2], saveThrowsBonus[2], proficiencyBonus);
+  skillBonus(conBonus, saveThrows[2], saveThrowsBonus[2], proficiencyBonus);
 })
 
-//setting wis save bonus
+//setting and comparing wis save bonus
+saveThrowsBonus[3].addEventListener("change", () => {
+  compare(wisBonus, saveThrows[3], saveThrowsBonus[3], proficiencyBonus);
+})
 saveThrows[3].addEventListener("change", () => {
-    skillBonus(wisBonus, saveThrows[3], saveThrowsBonus[3], proficiencyBonus);
+  skillBonus(wisBonus, saveThrows[3], saveThrowsBonus[3], proficiencyBonus);
 })
 
-//setting int save bonus
+//setting and comparing int save bonus
+saveThrowsBonus[4].addEventListener("change", () => {
+  compare(intBonus, saveThrows[4], saveThrowsBonus[4], proficiencyBonus);
+})
 saveThrows[4].addEventListener("change", () => {
-    skillBonus(intBonus, saveThrows[4], saveThrowsBonus[4], proficiencyBonus);
+  skillBonus(intBonus, saveThrows[4], saveThrowsBonus[4], proficiencyBonus);
 })
 
-//setting cha save bonus
+//setting and comparing cha save bonus
+saveThrowsBonus[5].addEventListener("change", () => {
+  compare(chaBonus, saveThrows[5], saveThrowsBonus[5], proficiencyBonus);
+})
 saveThrows[5].addEventListener("change", () => {
-    skillBonus(chaBonus, saveThrows[5], saveThrowsBonus[5], proficiencyBonus);
+  skillBonus(chaBonus, saveThrows[5], saveThrowsBonus[5], proficiencyBonus);
 })
 
 //calculating and saving skill bonus and saving throws
-const skillBonus = function(baseStatBonus, skill, skillBonusValue, proficiency){
-    let id = skillBonusValue.id;
+function skillBonus(baseStatBonus, skill, skillBonusValue, proficiency){
+  //console.log(proficiency.value);  
+  let id = skillBonusValue.id;
     let value;
     if(skill.checked){
       localStorage.setItem(skill.id, true);
@@ -388,59 +456,34 @@ const skillBonus = function(baseStatBonus, skill, skillBonusValue, proficiency){
     skillBonusValue.value = value;
   return value;
 };
+
 //loading skill bonus and saving throws
-const loadSkillBonusproficiency = function(skill){
+function loadSkillBonusproficiency(skill){
   if(localStorage.getItem(skill.id) === "true"){
     skill.checked = true;
   }
-}
-//adding listener on profficency bonus change
-proficiencyBonus.addEventListener("change", () =>{
-    skillBonus(dexBonus, skills[0], skillsBonus[0], proficiencyBonus);
-    skillBonus(wisBonus, skills[1], skillsBonus[1], proficiencyBonus);
-    skillBonus(intBonus, skills[2], skillsBonus[2], proficiencyBonus);
-    skillBonus(strBonus, skills[3], skillsBonus[3], proficiencyBonus);
-    skillBonus(chaBonus, skills[4], skillsBonus[4], proficiencyBonus);
-    skillBonus(intBonus, skills[5], skillsBonus[5], proficiencyBonus);
-    skillBonus(wisBonus, skills[6], skillsBonus[6], proficiencyBonus);
-    skillBonus(chaBonus, skills[7], skillsBonus[7], proficiencyBonus);
-    skillBonus(intBonus, skills[8], skillsBonus[8], proficiencyBonus);
-    skillBonus(wisBonus, skills[9], skillsBonus[9], proficiencyBonus);
-    skillBonus(intBonus, skills[10], skillsBonus[10], proficiencyBonus);
-    skillBonus(wisBonus, skills[11], skillsBonus[11], proficiencyBonus);
-    skillBonus(chaBonus, skills[12], skillsBonus[12], proficiencyBonus);
-    skillBonus(chaBonus, skills[13], skillsBonus[13], proficiencyBonus);
-    skillBonus(intBonus, skills[14], skillsBonus[14], proficiencyBonus);
-    skillBonus(dexBonus, skills[15], skillsBonus[15], proficiencyBonus);
-    skillBonus(dexBonus, skills[16], skillsBonus[16], proficiencyBonus);
-    skillBonus(wisBonus, skills[17], skillsBonus[17], proficiencyBonus);
-    skillBonus(strBonus, saveThrows[0], saveThrowsBonus[0], proficiencyBonus);
-    skillBonus(dexBonus, saveThrows[1], saveThrowsBonus[1], proficiencyBonus);
-    skillBonus(conBonus, saveThrows[2], saveThrowsBonus[2], proficiencyBonus);
-    skillBonus(wisBonus, saveThrows[3], saveThrowsBonus[3], proficiencyBonus);
-    skillBonus(intBonus, saveThrows[4], saveThrowsBonus[4], proficiencyBonus);
-    skillBonus(chaBonus, saveThrows[5], saveThrowsBonus[5], proficiencyBonus);
-    inputSave(proficiencyBonus);
-  passiveWisValue(passiveWis, wisBonus, proficiencyBonus, skills[11]);
-});
+};
 
 //loading and saving single inputs
-const inputSave = function(input){
+function inputSave(input){
   localStorage.setItem(input.id, input.value);
   return;
-}
-const inputLoad = function(input){
+};
+
+function inputLoad(input){
   if(localStorage.getItem(input.id) !== null){
     input.value = localStorage.getItem(input.id);
   }
   return;
 };
-let characterName = document.querySelector("#char-name")
+
+let characterName = document.querySelector("#char-name");
 characterName.addEventListener("change", () => {
   inputSave(characterName);
 });
+
 //loading checkbox inputs
-const loadCheckbox = function(input){
+function loadCheckbox(input){
   if(localStorage.getItem(input.id) !== null){
     input.checked = true;
   }
@@ -448,7 +491,7 @@ const loadCheckbox = function(input){
 };
 
 //saving checkbox input
-const saveCheckbox = function(input){
+function saveCheckbox(input){
   if(input.checked === true){
     localStorage.setItem(input.id, true);
   } else{
@@ -458,21 +501,19 @@ const saveCheckbox = function(input){
 
 //calculating passive wisdom
 let passiveWis = document.querySelector("#passive-wis");
-const passiveWisValue = function(passiveWis, wisBonus, proficiencyBonus, skills){
+function passiveWisValue(passiveWis, wisBonus, proficiencyBonus, skills){
     let value = 10 + +wisBonus.textContent;
     if(skills.checked === true){
       value += +proficiencyBonus.value;
     }
-  console.log(skills, skills.checked)
     passiveWis.value = value;
-}
-//testing
+};
 
 //saving inputs with class text-input
 for(let i = 0; i < textInputs.length; i++){
   textInputs[i].addEventListener("change", () => {
     inputSave(textInputs[i]);
-  })
+  });
 };
 
 //adding inputs for spells
@@ -527,8 +568,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-
-const createCantripInput = function(num){
+//creating cantrip input
+function createCantripInput(num){
   let div = document.createElement("div");
   div.classList.add("flex-row-nowrap");
   div.classList.add("center");
@@ -537,15 +578,14 @@ const createCantripInput = function(num){
   input.classList.add(`cantrip`)
   div.append(input)
   let parent = document.querySelector(`.cantrips`);
-  //console.log(circle);
   for(let i = 0; i < num; i++){
     parent.appendChild(div.cloneNode(true));
-    //console.log(i);
   }
   return;
 };
 
-const createSpellInput = function(circle, num){
+//creating spell input
+function createSpellInput(circle, num){
   let div = document.createElement("div");
   div.classList.add("flex-row-nowrap");
   div.classList.add("full-width");
@@ -559,29 +599,88 @@ const createSpellInput = function(circle, num){
   input.classList.add(`full-width`);
   div.append(checkbox, input);
   let parent = document.querySelector(`.circle-${circle}`);
-  //console.log(circle);
   for(let i = 0; i < num; i++){
     input.id = `spell-lvl-${circle}-${i}`
     checkbox.id = `prepared-${circle}-${i}`
     parent.appendChild(div.cloneNode(true));
-    //console.log(i);
   }
   return;
 };
 
+//from stack overflow (rewrite)
+function findLableForControl(el) {
+   var idVal = el.id;
+   labels = document.getElementsByTagName('label');
+   for( var i = 0; i < labels.length; i++ ) {
+      if (labels[i].htmlFor == idVal)
+           return labels[i];
+   }
+}
+
+function addBonus(label, id){
+  const re = /\d+$/g;
+  let text = label.textContent;
+  //console.log(text);
+  let bonus = localStorage.getItem(id);
+  //console.log(bonus);
+  if(re.test(text)){
+    text = text.split(" ");
+    text.pop();
+    text = text.join("");
+  }
+  label.textContent = `${text} +${bonus}`;
+  
+  return;
+}
+
+function removeBonus(label, id){
+  const re = /\d+$/g;
+  let text = label.textContent;
+  if(re.test(text)){
+    text = text.split(" ")
+    text.pop();
+    text = text.join(" ");
+    label.textContent = `${text}`;
+  };
+};
+
 //comparing calculated proficiency bonus with user input if larger saving diffrence to local storage
-const compare = function(baseStatBonus, skill, skillBonusValue, proficiency){
+function compare(baseStatBonus, skill, skillBonusValue, proficiency){
   let id = skillBonusValue.id;
-  let userInput = skillBonusValue.value
+  let userInput = skillBonusValue.value;
   let calculatedValue = localStorage.getItem(id);
-  if(calculatedValue < userInput){
-    let diffrence = userInput - calculatedValue;
+  let diffrence = userInput - calculatedValue;
+  let label = findLableForControl(skill);
+  let text = label.textContent
+  if(calculatedValue < Math.abs(userInput) && diffrence >= 1){
     localStorage.setItem(`${id}-user`, diffrence);
+    addBonus(label, `${id}-user`);
   } else{
+    removeBonus(label, `${id}-user`);
     if(localStorage.getItem(`${id}-user`) !== null){
       localStorage.removeItem(`${id}-user`);
     }
   }
   skillBonus(baseStatBonus, skill, skillBonusValue, proficiency);
+  return;
+};
+
+//determining proficiency bonus from level
+function proficiencyBonusFromLvl(input, output){
+  let lvl = input.value.match(/(\d+)/g)[0];
+  lvl = parseInt(lvl);
+  if(lvl >= 1 && lvl <= 4){
+    output.value = 2;
+  } else if(lvl >= 5 && lvl <= 8){
+    output.value = 3;
+  } else if(lvl >= 9 && lvl <= 12){
+    output.value = 4;
+  } else if(lvl >= 13 && lvl <= 16){
+    output.value = 5;
+  } else if(lvl >= 17 && lvl <= 20){
+    output.value = 6;
+  } else{
+    output.value = 0;
+  }
   return;
 };
