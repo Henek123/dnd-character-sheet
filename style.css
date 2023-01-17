@@ -106,20 +106,21 @@ input{
   width: 34%;
   height: 77%;
   margin-left: 4px;
-/*   min-width: 300px; */
+  min-width: 340px;
 }
 .ability-score{
 
   justify-content: space-between;
   width: 40%;
+  margin: 2px 4px 4px 0;
 }
 .ability-score > div{
   border: 4px double black;
   border-radius: 10% 10% 60% 60%;
   width: 75%;
   margin-bottom: 4px;
-  min-width: 80px;
-  max-width: 90px;
+  min-width: 90px;
+  max-width: 100px;
 }
 .ability-bonus{
   text-align: center;
@@ -244,7 +245,7 @@ input[type="checkbox"]:hover{
 .second-column{
   height: 96%;
   width: 34%;
-/*   min-width: 300px; */
+  min-width: 340px;
   margin: 0;
   padding: 0;
   align-content: flex-start;
@@ -346,6 +347,7 @@ input[type="checkbox"]:hover{
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 12px;
 }
 .weapons-spells{
   padding-bottom: 0.5em;
@@ -749,28 +751,79 @@ textarea{
   position: relative;
   right: 8px;
 }
-/*
+
 @media (max-width: 900px){
   .first-page{
     height: unset;
   }
+  .char-info{
+    flex-direction: column;
+    align-items: center;
+    flex-direction: column;
+  }
+  .name{
+    width: 90%;
+    min-height: 65px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 8px;
+  }
+  .name > div{
+    width: 100%;
+  }
+  #char-name{
+    width: 100%;
+    height: 40px;
+  }
+  .char-details{
+    width: 90%;
+    margin: unset;
+    padding: 0 8px;
+  }
+  .char-details > div{
+    width: 45%;
+  }
   .first-column{
-    width: 49%;
-    justify-content: space-around;
+    width: 98%;
+    justify-content: space-between;
+    min-width: unset;
+    margin: unset;
   }
   .second-column{
-    width: 49%;
+    width: 98%;
+    min-width: unset;
+  }
+  .armor-class,
+  .speed,
+  .initiative{
+    min-height: 70px;
+  }
+  #hp-temp{
+    min-height: 70px;
+  }  .ability-score{
+    align-items: center;
+  }
+  #other-weapons{
+    min-height: 80px;
   }
   .third-column{
     width: 100%;
     margin-left: 4px;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: space-between;
+    align-items: center;
   }
-  .third-column > div{
-    width: 48%;
+  #features{
+    height: 300px;
+  }
+  .character{
+    width: 98%;
     height: 600px;
+  }
+  .features{
+    height: 200px;
+    width: 92%;
   }
   #equipment{
     height: 200px;
@@ -778,7 +831,104 @@ textarea{
   #other-proficiencies{
     height: 160px;
   }
-  .ability-score{
+  .container{
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: unset;
+  }
+  .allies{
+    min-height: 300px;
+    flex-direction: column;
+  }
+  .organization,
+  #allies-input{
+    height: 200px;
+    width: 95%;
+    margin-bottom: 8px;
+  }
+  #org-desc{
+    height: 70%;
+  }
+  #add-features{
+    height: 70%;
+  }
+  .additional-features,
+  .treasure{
+    min-height: 200px;
+  }
+  .second-page{
+    height: unset;
+  }
+  .second-page-info{
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
   }
-} */
+  .second-page-name{
+    width: 95%;
+    padding: 8px 0;
+  }
+  .apperance{
+    width: 95%;
+    padding: 8px 0;
+  }
+  .apperance > div{
+    width: 45%;
+  }
+  .fourth-column,
+  .fifth-column{
+    width: 100%;
+    margin: unset;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .fourth-column > div{
+    width: 95%;
+  }
+  .char-backstory,
+  .char-apperance{
+    min-height: 200px;
+  }
+  #apperance-char,
+  #backstory-char{
+    min-height: 150px;
+  }
+  .fifth-column > div{
+    width: 95%;
+  }
+  .third-page{
+    height: unset;
+  }
+  .spellcasting{
+    flex-direction: column;
+    min-height: 200px;
+  }
+  .spell-class{
+    width: 95%;
+    padding: 8px 0;
+  }
+  .spellcasting-details{
+    width: 95%;
+    padding: 8px 0;
+  }
+  .sixth-column,
+  .seventh-column,
+  .eigth-column{
+    width: 95%;
+  }
+  .circle-1,
+  .circle-2,
+  .circle-3,
+  .circle-4,
+  .circle-5,
+  .circle-6,
+  .circle-7,
+  .circle-8,
+  .circle-9{
+    width: 100%;
+    margin: unset;
+  }
+}
