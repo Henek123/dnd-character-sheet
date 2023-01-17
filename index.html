@@ -43,7 +43,7 @@
          </div>
        </div>
      </div>
-     <div class="container">
+     <div class="container main-stats">
        <div class="first-column">
          <div class="flex-row-nowrap">
            <div class="ability-score flex-col">
@@ -260,16 +260,16 @@
          </div>
          <div class="death-saves border-square">
            <div class="successes-container flex-row-wrap">
-             <p>successes</p>
-             <input type="checkbox" class="death-throw">
-             <input type="checkbox" class="death-throw">
-             <input type="checkbox" class="death-throw">
+             <p>SUCCESSES</p>
+             <input type="checkbox" class="death-throw" id="success-1">
+             <input type="checkbox" class="death-throw" id="success-2">
+             <input type="checkbox" class="death-throw" id="success-3">
            </div>
            <div class="failures-container flex-row-wrap">
              <p>FAILURES</p>
-             <input type="checkbox" class="death-throw">
-             <input type="checkbox" class="death-throw">
-             <input type="checkbox" class="death-throw">
+             <input type="checkbox" class="death-throw" id="failure-1">
+             <input type="checkbox" class="death-throw" id="failure-2">
+             <input type="checkbox" class="death-throw" id="failure-3">
            </div>
            <p>DEATH SAVES</p>
          </div>
@@ -280,19 +280,19 @@
              <div class="grey">DAMAGE</div>
            </div>
            <div id="weapon-1" class="weapon flex-row-nowrap">
-             <input type="text">
-             <input type="text">
-             <input type="text">
+             <input type="text" class="text-input" id="wpn-name-1">
+             <input type="text" class="text-input" id="wpn-attack-1">
+             <input type="text" class="text-input" id="wpn-dmg-1">
            </div>
            <div id="weapon-2" class="weapon flex-row-nowrap">
-             <input type="text">
-             <input type="text">
-             <input type="text">
+             <input type="text" class="text-input" id="wpn-name-2">
+             <input type="text" class="text-input" id="wpn-attack-2">
+             <input type="text" class="text-input" id="wpn-dmg-2">
            </div>
            <div id="weapon-3" class="weapon flex-row-nowrap">
-             <input type="text">
-             <input type="text">
-             <input type="text">
+             <input type="text" class="text-input" id="wpn-name-3">
+             <input type="text" class="text-input" id="wpn-attack-3">
+             <input type="text" class="text-input" id="wpn-dmg-3">
            </div>
            <textarea id="other-weapons" class="text-input"></textarea>
            <p>ATTACKS & SPELLCASTING</p>
