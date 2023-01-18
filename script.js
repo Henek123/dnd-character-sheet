@@ -33,7 +33,7 @@ function addBonus(label, id){
   if(re.test(text)){
     text = text.split(" ");
     text.pop();
-    text = text.join("");
+    text = text.join(" ");
   }
   label.textContent = `${text} +${bonus}`;
   
