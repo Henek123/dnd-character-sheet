@@ -260,6 +260,10 @@ input[type="checkbox"]:hover{
 #speed{
   border: 2px dashed grey;
 }
+#initiative,
+#speed{
+  height: 2.5em;
+}
 .hp-max{
  padding-top: 4px;
  width: 95%;
@@ -289,7 +293,7 @@ input[type="checkbox"]:hover{
 #current-hp{
   border: 2px dashed grey;
   width: 90%;
-  height: 1.25em;
+  height: 1.5em;
   text-align: center;
 }
 #hp-temp{
@@ -298,7 +302,8 @@ input[type="checkbox"]:hover{
   width: 95%;
   height: 8%;
   border: 4px double black;
-  border-radius: 1em 1em 0.5em 0.5em / 2em 2em 0.5em 0.5em
+  border-radius: 1em 1em 0.5em 0.5em / 2em 2em 0.5em 0.5em;
+  justify-content: space-around;
 }
 #temp-hp{
   border: 2px dashed grey;
@@ -782,7 +787,7 @@ textarea{
     width: 100%;
     height: 300px;
   }
-  #other-weapons{1
+  #other-weapons{
     min-height: 80px;
   }
   #features{
@@ -859,7 +864,7 @@ textarea{
   .weapons-spells{
     width: 100%;
   }
-  #other-weapons{1
+  #other-weapons{
     min-height: 80px;
   }
   .third-column{
