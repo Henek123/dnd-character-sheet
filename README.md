@@ -17,9 +17,8 @@
 
 <!-- ABOUT THE PROJEC -->
 ## About The Project
-<img src="/images/icons/readMe/GIMP/05.png" alt="Logo" width="100%" height="100%">
 
-dnd-character-sheet is a website build on flexbox, JavaScript calculates, saves and loads data from user input
+dnd-character-sheet is a website based on official design of the Dungeons & Dragons character sheet. It is based on flexbox model and JavaScript.
 * Proficiency bonus is calculated from the Class & Level input.
 * Ability bonus is calculated from the ability score.
 * Skills and saving throws are calculated from the ability bonus and proficiency bonus.
