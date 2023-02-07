@@ -1,15 +1,9 @@
-<br />
-<div align="center">
-  <a href="https://henek123.github.io/dnd-character-sheet/">
-    <img src="/images/icons/readMe/GIMP/logo.png" alt="Logo" width="100%" height="100%">
-  </a>
-
 
   <p align="center">
   <br />
     <br/>
     <br/>
-    <a href="https://bartosz-bednarski.github.io/YouTube-Project/"><strong>Explore the website</strong></a>
+    <a href="https://henek123.github.io/dnd-character-sheet/"><strong>Explore the website</strong></a>
     <br />
     
   </p>
