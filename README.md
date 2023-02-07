@@ -43,12 +43,12 @@ dnd-character-sheet is a website build on flexbox, JavaScript calculates, saves 
 
 
 ## Desktop view
-<img src="/images/icons/readMe/GIMP/01.png" alt="Logo" width="100%" height="100%">
-<img src="/images/icons/readMe/GIMP/03.png" alt="Logo" width="100%" height="100%">
-<img src="/images/icons/readMe/GIMP/04.png" alt="Logo" width="100%" height="100%">
+<img src="/images/readme/desktop1.png" alt="Logo" width="100%" height="100%">
+<img src="/images/readme/desktop2.png" alt="Logo" width="100%" height="100%">
+<img src="/images/readme/desktop3.png" alt="Logo" width="100%" height="100%">
 
 ## Mobile view
-<img src="/images/icons/readMe/01_mobile.jpg" alt="Logo" width="30%" height="auto"> <img src="/images/icons/readMe/02_mobile.jpg" alt="Logo" width="30%" height="auto"> <img src="/images/icons/readMe/03_mobile.jpg" alt="Logo" width="30%" height="auto">      
+<img src="/images/readme/mobile1.jpg" alt="Logo" width="30%" height="auto"> <img src="/images/readme/mobile2.jpg" alt="Logo" width="30%" height="auto"> <img src="/images/readme/mobile2.jpg" alt="Logo" width="30%" height="auto">      
 
 
 <!-- CONTACT -->
